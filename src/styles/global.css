@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Nunito";
+  src: url("../assets/fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DotGothic16";
+  src: url("../assets/fonts/DotGothic16-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-dot: "DotGothic16", monospace;
+
+  --color-primary: oklch(14.1% 0.005 285.823);
+  --color-window-bg: #FBEAB0;
+}
+
+@utility shadow-solid {
+  box-shadow: 4px 4px 0px 0px var(--color-primary);
+}
+
+body {
+  font-family: var(--font-sans);
+}
