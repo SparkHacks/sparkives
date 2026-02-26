@@ -1,7 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Window from "../components/Window.astro";
-import { Banana } from "@lucide/astro";
+import Dock from "../components/Dock.astro";
+import { Banana, Folder } from "@lucide/astro";
+import YearGrid from "../components/YearGrid.astro";
+
+const dockItems = [
+	{ id: "win-finder", label: "Finder" },
+	{ id: "", label: "Notes" },
+	{ id: "", label: "Music" },
+	{ id: "", label: "Terminal" },
+];
 ---
 
 <Layout title="Sparkives">
@@ -10,32 +19,14 @@ import { Banana } from "@lucide/astro";
 		<h1 class="text-3xl font-bold font-dot">Sparkives</h1>
 	</header>
 
-	<button data-open="Window-1" class="border-2 border-primary text-primary font-dot px-3 py-1 rounded-md shadow-solid mr-10">Open Window 1</button>
-
-	<button data-open="Window-2" class="border-2 border-primary text-primary font-dot px-3 py-1 rounded-md shadow-solid">Open Window 2</button>
-
-	<Window id="Window-1" title="Hello" initialX={120} initialY={160} open={false} headerColor="purple">
-		<p>Example Content 1.</p>
-		<button data-open="Window-11" class="border-2 border-primary text-primary bg-white font-dot text-sm px-2 py-1 rounded-md shadow-solid self-start">
-			Open Inner Window
-		</button>
+	<!-- WINDOWS -->
+	<Window id="win-finder" title="Past Years Archive" initialX={120} initialY={160} open={true} headerColor="sky" width="400px">
+		<YearGrid />
 	</Window>
 
-	<Window id="Window-11" title="Window 2" initialX={300} initialY={220} open={false} headerColor="green" defaultZLayer={19}>
-		<p class="text-sm font-dot">Opened from Window 1!</p>
+	<Window id="win-2025" title="Past Years Archive" initialX={220} initialY={260} open={false} headerColor="green">
+		<p>2025</p>
 	</Window>
 
-	<Window id="Window-2" title="Window 2" initialX={400} initialY={280} open={false} headerColor="red">
-		<p class="text-sm font-dot">Window 2!</p>
-	</Window>
+	<Dock items={dockItems} />
 </Layout>
-
-<script>
-	for (const btn of document.querySelectorAll<HTMLElement>("[data-open]")) {
-		btn.addEventListener("click", () => {
-			const id = btn.dataset.open!;
-			const win = document.getElementById(id);
-			if (win) win.style.display = "block";
-		});
-	}
-</script>

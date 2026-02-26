@@ -68,6 +68,13 @@ const gradientClasses = headerColorMap[headerColor] ?? headerColorMap.sky;
     ...Array.from(document.querySelectorAll<HTMLElement>(".window")).map(w => Number(w.dataset.z ?? 10))
   );
 
+  for (const btn of document.querySelectorAll<HTMLElement>("[data-open]")) {
+    btn.addEventListener("click", () => {
+      const target = document.getElementById(btn.dataset.open!);
+      if (target) target.style.display = "block";
+    });
+  }
+
   for (const win of document.querySelectorAll<HTMLElement>(".window")) {
     const titlebar = win.querySelector<HTMLElement>(".window-titlebar")!;
     const closeBtn = win.querySelector<HTMLElement>(".window-close")!;

@@ -1,0 +1,31 @@
+---
+import { Folder } from "@lucide/astro";
+---
+
+<div class="grid grid-cols-5 gap-4 px-4">
+	<button data-open="win-2025" class="flex flex-col items-center justify-center gap-1">
+		<svg width="0" height="0" class="absolute">
+			<defs>
+				<linearGradient id="2025-gradient" x1="0" y1="0" x2="0" y2="1">
+					<stop offset="0%" stop-color="#f87171"></stop>
+					<stop offset="100%" stop-color="#ffffff"></stop>
+				</linearGradient>
+			</defs>
+		</svg>
+		<Folder class="drop-shadow-solid" style="fill: url(#2025-gradient)" size={50} />
+		2025
+	</button>
+
+    <button data-open="" class="flex flex-col items-center justify-center gap-1">
+		<svg width="0" height="0" class="absolute">
+			<defs>
+				<linearGradient id="2026-gradient" x1="0" y1="0" x2="0" y2="1">
+					<stop offset="0%" stop-color="#49cedd"></stop>
+					<stop offset="100%" stop-color="#ffffff"></stop>
+				</linearGradient>
+			</defs>
+		</svg>
+		<Folder class="drop-shadow-solid" style="fill: url(#2026-gradient)" size={50} />
+		2026
+	</button>
+</div>

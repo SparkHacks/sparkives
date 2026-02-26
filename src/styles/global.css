@@ -28,6 +28,10 @@
   box-shadow: 4px 4px 0px 0px var(--color-primary);
 }
 
+@utility drop-shadow-solid {
+  filter: drop-shadow(4px 4px 0px var(--color-primary));
+}
+
 body {
   font-family: var(--font-sans);
 }

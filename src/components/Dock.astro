@@ -1,0 +1,77 @@
+---
+import { Folder, Square } from "@lucide/astro";
+
+interface DockItem {
+  id?: string;
+  label: string;
+}
+
+interface Props {
+  items: DockItem[];
+}
+
+const { items } = Astro.props;
+
+const defaultIcons = [Folder, Square, Square, Square];
+---
+
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-6 px-6 py-3 rounded-2xl border-2 border-primary shadow-solid">
+  {items.map((item, i) => {
+    const Icon = defaultIcons[i] ?? Square;
+    return (
+      <button
+        data-open={item.id ?? ""}
+        class="dock-btn group relative flex flex-col items-center justify-center"
+        title={item.label}
+      >
+        <span class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md border-2 border-primary bg-window-bg px-2 py-0.5 text-xs font-dot text-primary opacity-0 shadow-solid transition-opacity duration-150 group-hover:opacity-100">
+          {item.label}
+        </span>
+        <Icon
+          class="text-primary transition-all duration-200 ease-out group-hover:scale-150 group-hover:-translate-y-2"
+          size={28}
+          stroke-width={1.5}
+        />
+      </button>
+    );
+  })}
+</div>
+
+<script>
+  for (const btn of document.querySelectorAll<HTMLElement>(".dock-btn")) {
+    const id = btn.dataset.open;
+    if (!id) continue;
+    const win = document.getElementById(id);
+    if (!win) continue;
+
+    btn.addEventListener("click", () => {
+      if (win.style.display === "none") {
+        win.style.display = "block";
+      } else {
+        win.classList.add("dock-bounce");
+        win.addEventListener("animationend", () => win.classList.remove("dock-bounce"), { once: true });
+        win.dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
+      }
+    });
+  }
+</script>
+
+<style>
+  .dock-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  @keyframes dock-bounce {
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-12px); }
+    60%  { transform: translateY(4px); }
+    80%  { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+  }
+  :global(.dock-bounce) {
+    animation: dock-bounce 0.4s ease;
+  }
+</style>
