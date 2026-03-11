@@ -6,11 +6,11 @@ import { Banana, Folder } from "@lucide/astro";
 import YearGrid from "../components/YearGrid.astro";
 
 const dockItems = [
-	{ id: "win-finder", label: "Finder" },
-	{ id: "", label: "Notes" },
-	{ id: "", label: "Music" },
-	{ id: "", label: "Terminal" },
-];
+	{ id: "win-finder", label: "Finder", icon: "computer" },
+	{ id: "", label: "Mail", icon: "mail" },
+	{ id: "", label: "Internet", icon: "internet" },
+	{ id: "", label: "Trash", icon: "trash" },
+] as const;
 ---
 
 <Layout title="Sparkives">

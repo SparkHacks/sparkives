@@ -1,24 +1,25 @@
 ---
-import { Folder, Square } from "@lucide/astro";
+import { icons } from "../assets/svgBank"
 
 interface DockItem {
-  id?: string;
-  label: string;
+  id?: string
+  label: string
+  icon: keyof typeof icons
+  shadowColor?: string
 }
 
 interface Props {
-  items: DockItem[];
+  items: DockItem[]
 }
 
-const { items } = Astro.props;
-
-const defaultIcons = [Folder, Square, Square, Square];
+const { items } = Astro.props
 ---
 
-<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-6 px-6 py-3 rounded-2xl border-2 border-primary shadow-solid">
-  {items.map((item, i) => {
-    const Icon = defaultIcons[i] ?? Square;
-    return (
+<div class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50" style="width:400px;">
+  <div class="absolute bottom-0 left-0 w-full pointer-events-none" set:html={icons.dockPad} />
+
+  <div class="absolute left-0 w-full flex items-end justify-center gap-6 px-8" style="bottom: 15px;">
+    {items.map((item) => (
       <button
         data-open={item.id ?? ""}
         class="dock-btn group relative flex flex-col items-center justify-center"
@@ -27,14 +28,14 @@ const defaultIcons = [Folder, Square, Square, Square];
         <span class="pointer-events-none absolute -top-11 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md border-2 border-primary bg-window-bg px-2 py-0.5 text-xs font-dot text-primary opacity-0 shadow-solid transition-opacity duration-150 group-hover:opacity-100">
           {item.label}
         </span>
-        <Icon
-          class="text-primary transition-all duration-200 ease-out group-hover:scale-150 group-hover:-translate-y-2"
-          size={28}
-          stroke-width={1.5}
+        <span
+          class="dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
+          style="filter: drop-shadow(2px 4px 0px black)"
+          set:html={icons[item.icon]}
         />
       </button>
-    );
-  })}
+    ))}
+  </div>
 </div>
 
 <script>
@@ -73,5 +74,10 @@ const defaultIcons = [Folder, Square, Square, Square];
   }
   :global(.dock-bounce) {
     animation: dock-bounce 0.4s ease;
+  }
+
+  .dock-icon :global(svg) {
+    width: 55px;
+    height: 55px;
   }
 </style>
