@@ -3,6 +3,7 @@
 export const sampleData = {
     // this info should not change!
     "name": "",
+    "slogan": "",
     "date": "",
     "participants": 0,
     "projects": 0,
@@ -19,14 +20,12 @@ export const sampleData = {
                 "role": "",
                 "photo": "",
                 "linkedin": "",
-                "github": "",
             },
             {
                 "name": "",
                 "role": "",
                 "photo": "",
                 "linkedin": "",
-                "github": "",
             },
             // add more team members here
         ],

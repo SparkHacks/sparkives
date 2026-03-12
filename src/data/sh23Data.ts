@@ -1,5 +1,6 @@
 export const sh23Data = {
     "name": "SparkHacks 2023",
+    "slogan": "",
     "date": "04/07/2023 - 04/08/2023",
     "participants": 176,
     "projects": 24,
@@ -9,94 +10,151 @@ export const sh23Data = {
     "gallery": "",
     "devpost": "https://sparkhacks-at-uic.devpost.com/",
 
-    // 2023 did not have separate teams and roles! just executive leaders
+    // 2023 did not have super defined teams and roles! 
+    // everyone just kinda did everything but this info was pulled from the instagram posts
     "team": {
         "directors": [
             {
-                "name": "Omotola Elujulo",
-                "role": "Executive Leader",
-                "photo": "",
-                "linkedin": "",
-                "github": "",
-            },
-            {
-                "name": "Sydney Wells",
-                "role": "Executive Leader",
-                "photo": "",
-                "linkedin": "",
-                "github": "",
-            },
-            {
-                "name": "Krish Bavana",
-                "role": "Executive Leader",
-                "photo": "",
-                "linkedin": "",
-                "github": "",
-            },
-            {
-                "name": "Krisha Patel",
-                "role": "Executive Leader",
-                "photo": "",
-                "linkedin": "",
-                "github": "",
-            },
-            {
-                "name": "Christian Bingman",
-                "role": "Executive Leader",
-                "photo": "",
-                "linkedin": "",
-                "github": "",
-            },
-            {
                 "name": "Darlene Marchan",
-                "role": "Executive Leader",
+                "role": "Director",
                 "photo": "",
-                "linkedin": "",
-                "github": "",
-            },
+                "linkedin": "https://www.linkedin.com/in/darlene-marchan/",
+            }
+        ],
+        "communications": [
             {
-                "name": "Bhuvni Shah",
-                "role": "Executive Leader",
+                "name": "Omotola Elujulo",
+                "role": "Communications Head",
                 "photo": "",
-                "linkedin": "",
-                "github": "",
+                "linkedin": "https://www.linkedin.com/in/omotola-elujulo/",
             },
             {
                 "name": "Nandana Sheri",
-                "role": "Executive Leader",
+                "role": "Communications",
                 "photo": "",
-                "linkedin": "",
-                "github": "",
+                "linkedin": "https://www.linkedin.com/in/nandana-sheri/",
             },
             {
-                "name": "Annie You",
-                "role": "Executive Leader",
+                "name": "Saloni Patel",
+                "role": "Communications & Experience",
                 "photo": "",
-                "linkedin": "",
-                "github": "",
+                "linkedin": "https://www.linkedin.com/in/saloni-patel-7a1a32211/",
+            },
+            {
+                "name": "Niharika Patil",
+                "role": "Communications",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/niharika-patil1468/",
+            },
+            {
+                "name": "Lisset Rico",
+                "role": "Communications",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/lisset-c-rico-85aa91210/",
+            },
+        ],
+        "logistics": [
+            {
+                "name": "Krishna Bavana",
+                "role": "Logistics Head",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/kcbavana/",
+            },
+            {
+                "name": "Bhuvni Shah",
+                "role": "Logistics Head",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/bhuvni-shah/",
+            },
+            {
+                "name": "Sydney Wells",
+                "role": "Logistics",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/sydneyrwells/",
+            },
+            {
+                "name": "Megan Herrera",
+                "role": "Logistics",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/megan-h-340391174/",
+            },
+            {
+                "name": "Chandhana Voleti",
+                "role": "Logistics",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/chandhana-voleti/",
+            },
+        ],
+        "experience": [
+            {
+                "name": "Annie You",
+                "role": "Experience",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/annie-you/",
+            },
+            {
+                "name": "Sahaja Peddaveerannagari",
+                "role": "Experience",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/sahaja-reddyp/",
+            },
+            {
+                "name": "Anthony Sorto",
+                "role": "Experience",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/anthony-sorto/",
+            },
+            {
+                "name": "Emily Mendoza",
+                "role": "Experience",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/emily-v-mendoza37/",
             },
             {
                 "name": "Sam Effendy",
-                "role": "Executive Leader",
+                "role": "Experience",
                 "photo": "",
-                "linkedin": "",
-                "github": "",
+                "linkedin": "https://www.linkedin.com/in/samef/",
             },
         ],
-        "communications": [
-            // add team members here
-        ],
-        "logistics": [
-            // add team members here
-        ],
-        "experience": [
-            // add team members here
-        ],
-        "outreach": [
-            // add team members here
-        ],
-        "webdev": [
-            // add team members here
+        // did not have outreach or web dev teams, it was just "media"
+        "media": [
+            {
+                "name": "Christian Bingman",
+                "role": "Web Dev Lead & Experience Head",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/christianbingman/",
+            },
+            {
+                "name": "Jelena Gvero",
+                "role": "Media",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/jelena-gvero/",
+            },
+            {
+                "name": "Leland Moy",
+                "role": "Media",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/leland-moy/",
+            },
+            {
+                "name": "Hamza Gaziuddin",
+                "role": "Media",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/hamza-gaziuddin/",
+            },
+            {
+                "name": "Krisha Patel",
+                "role": "Media & Communications",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/krishapatel16/",
+            },
+            {
+                "name": "Chenille Lawrence",
+                "role": "Media & Communications & Experience",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/chenille-lawrence/",
+            },
         ],
     },
 
