@@ -17,7 +17,7 @@ const { id, title = "Window", initialX = 100, initialY = 100, width = "320px", o
 const headerColorMap: Record<string, string> = {
   red:    "from-red-100 to-red-300",
   orange: "from-orange-100 to-orange-300",
-  yellow: "from-yellow-100 to-yellow-300",
+  yellow: "from-[#F8E9C3] to-[#F8DA94]",
   green:  "from-green-100 to-green-300",
   sky:    "from-sky-100 to-sky-300",
   blue:   "from-blue-100 to-blue-300",
@@ -30,16 +30,16 @@ const gradientClasses = headerColorMap[headerColor] ?? headerColorMap.sky;
 
 <div
   id={id}
-  class="window fixed overflow-hidden rounded-xl border-2 border-primary bg-window-bg shadow-solid font-dot select-none"
+  class="window fixed overflow-hidden rounded-xl border-[4px] border-primary shadow-solid font-dot select-none text-lg"
   data-z={defaultZLayer}
   data-initial-x={initialX}
   data-initial-y={initialY}
-  style={`left:${initialX}px; top:${initialY}px; width:${width}; display:${open ? "block" : "none"}; z-index:${defaultZLayer};`}
+  style={`background: linear-gradient(to bottom, #FDF8DD, #FDEFD1); left:${initialX}px; top:${initialY}px; width:${width}; display:${open ? "block" : "none"}; z-index:${defaultZLayer};`}
 >
-  <div class={`window-titlebar flex items-center justify-between border-b-2 border-primary bg-linear-0 ${gradientClasses} px-3 py-2 cursor-grab`}>
+  <div class={`window-titlebar flex items-center justify-between border-b-[3px] border-primary bg-linear-0 ${gradientClasses} px-3 py-2 cursor-grab`}>
     <span class="text-primary flex-1">{title}</span>
     <button class="window-close text-primary cursor-pointer">
-      <X />
+      <X stroke-width="4px"/>
     </button>
   </div>
 

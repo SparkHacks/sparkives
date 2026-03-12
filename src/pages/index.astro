@@ -4,6 +4,7 @@ import Window from "../components/Window.astro";
 import Dock from "../components/Dock.astro";
 import { Banana, Folder } from "@lucide/astro";
 import YearGrid from "../components/YearGrid.astro";
+import { icons } from "../assets/svgBank";
 
 const dockItems = [
 	{ id: "win-finder", label: "Finder", icon: "computer" },
@@ -11,16 +12,33 @@ const dockItems = [
 	{ id: "", label: "Internet", icon: "internet" },
 	{ id: "", label: "Trash", icon: "trash" },
 ] as const;
+
+const numRows = 6;
+const iconsPerRow = 20;
 ---
 
 <Layout title="Sparkives">
-	<header class="mb-8 flex items-center gap-3">
-		<Banana class="text-yellow-400" size={32} />
-		<h1 class="text-3xl font-bold font-dot">Sparkives</h1>
-	</header>
+
+	<div class="flex flex-col items-end">
+		<h1 class="font-sans text-6xl font-black">Sparkhacks Archive</h1>
+		<p class="font-dot text-2xl">Walk through our past!</p>
+	</div>
+
+	<!-- SCROLLING BACKGROUND -->
+	<div class="bg-scroll-container">
+		{Array.from({ length: numRows }).map((_, rowIndex) => (
+			<div class={`bg-scroll-row ${rowIndex % 2 === 0 ? "scroll-left" : "scroll-right"}`}>
+				<div class="bg-scroll-track">
+					{Array.from({ length: iconsPerRow * 2 }).map(() => (
+						<span class="bg-scroll-icon" set:html={icons.backgroundText} />
+					))}
+				</div>
+			</div>
+		))}
+	</div>
 
 	<!-- WINDOWS -->
-	<Window id="win-finder" title="Past Years Archive" initialX={120} initialY={160} open={true} headerColor="sky" width="400px">
+	<Window id="win-finder" title="Past Years Archive" initialX={120} initialY={160} open={true} headerColor="yellow" width="400px">
 		<YearGrid />
 	</Window>
 
@@ -30,3 +48,54 @@ const dockItems = [
 
 	<Dock items={dockItems} />
 </Layout>
+
+<style>
+	.bg-scroll-container {
+		position: fixed;
+		inset: 0;
+		overflow: hidden;
+		transform: rotate(-9deg) scale(1.3);
+		z-index: -1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 100px;
+		pointer-events: none;
+		background: linear-gradient(0deg, #7DBBFD 0%, #BDE5E7 87%);
+	}
+
+	.bg-scroll-row {
+		display: flex;
+		min-width: 0;
+	}
+
+	.bg-scroll-track {
+		display: flex;
+		gap: 100px;
+		will-change: transform;
+		white-space: nowrap;
+	}
+
+	.bg-scroll-icon {
+		display: inline-flex;
+		flex-shrink: 0;
+	}
+
+	.scroll-left .bg-scroll-track {
+		animation: scrollLeft 260s linear infinite;
+	}
+
+	.scroll-right .bg-scroll-track {
+		animation: scrollRight 260s linear infinite;
+	}
+
+	@keyframes scrollLeft {
+		from { transform: translateX(0); }
+		to { transform: translateX(-50%); }
+	}
+
+	@keyframes scrollRight {
+		from { transform: translateX(-50%); }
+		to { transform: translateX(0); }
+	}
+</style>
