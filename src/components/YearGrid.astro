@@ -16,7 +16,7 @@ const openPath = "M66 44.0833C67.5471 44.0833 69.0308 43.4688 70.1248 42.3748C71
       <div class="relative" style="width:75px; height:55px;">
 
         <!-- Closed folder (shown by default) -->
-        <div class="folder-closed absolute inset-0 flex items-center justify-center" style="filter: drop-shadow(2px 4px 0px black)">
+        <div class="folder-closed absolute inset-0 flex items-center justify-center cursor-pointer" style="filter: drop-shadow(2px 4px 0px black)">
           <svg width="64" height="55" viewBox="0 0 64 55" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id={`grad-${year}`} x1="31.6667" y1="2.5" x2="31.6667" y2="52.0833" gradientUnits="userSpaceOnUse">
@@ -29,7 +29,7 @@ const openPath = "M66 44.0833C67.5471 44.0833 69.0308 43.4688 70.1248 42.3748C71
         </div>
 
         <!-- Open folder (hidden by default) — black shadow folder behind, colored open folder in front -->
-        <div class="folder-open absolute inset-0 flex items-end" style="display:none;">
+        <div class="folder-open absolute inset-0 flex items-end cursor-pointer" style="display:none;">
           <!-- Black shadow: closed shape, offset -->
           <svg width="64" height="55" viewBox="0 0 64 55" fill="none" xmlns="http://www.w3.org/2000/svg" class="absolute" style="bottom:4px; left:11px;">
             <path d={closedPath} fill="black" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
