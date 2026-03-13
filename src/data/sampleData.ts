@@ -3,7 +3,7 @@
 export const sampleData = {
     // this info should not change!
     "name": "",
-    "slogan": "",
+    "slogan": "", // not all years might have this
     "date": "",
     "participants": 0,
     "projects": 0,
@@ -57,7 +57,6 @@ export const sampleData = {
                     "placement": "1st Place",
                     "authors": "",
                     "description": "",
-                    "photo": "",
                     "link": ""
                 },
                 {
@@ -65,7 +64,6 @@ export const sampleData = {
                     "placement": "2nd Place",
                     "authors": "",
                     "description": "",
-                    "photo": "",
                     "link": ""
                 },
                 {
@@ -73,7 +71,6 @@ export const sampleData = {
                     "placement": "3rd Place",
                     "authors": "",
                     "description": "",
-                    "photo": "",
                     "link": ""
                 },
                 // add/remove winners here

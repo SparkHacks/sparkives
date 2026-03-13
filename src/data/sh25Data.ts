@@ -186,7 +186,6 @@ export const sh25Data = {
                     "placement": "1st Place",
                     "authors": "Angelo Guerrero, Ammar Bahrainwala, Deepikka Natarajan, Eric Varghese",
                     "description": "WingGuard uses a trained predictive model to anticipate the likelihood that chickens in a flock may contract the Avian Flu",
-                    "photo": "",
                     "link": "https://devpost.com/software/avian-flu-tracker"
                 },
                 {
@@ -194,7 +193,6 @@ export const sh25Data = {
                     "placement": "2nd Place",
                     "authors": "Jash Patel, Shail Patel, Deven Patel, Ayush Thakkar, Vandit Shah",
                     "description": "AgriMitra: AI-powered farming aid for waste management. Chatbot, weather updates & forums help farmers repurpose waste, reduce pollution & go eco-friendly. Transform waste into opportunity!",
-                    "photo": "",
                     "link": "https://devpost.com/software/agrimitra"
                 },
             ]
@@ -208,7 +206,6 @@ export const sh25Data = {
                     "placement": "1st Place",
                     "authors": "Atulya Prasad, Kavya Patel, Aye Kyawt Zin, Nour Alsramah, Zaina Khalil",
                     "description": "Le' go fill our water bottles. But where is it? This new feature in the UIC dining hall Everyday app will give you the location of water filling stations and their statuses.",
-                    "photo": "",
                     "link": "https://devpost.com/software/le-go"
                 },
                 {
@@ -216,7 +213,6 @@ export const sh25Data = {
                     "placement": "2nd Place",
                     "authors": "Mohammed Fatheen Ahmed, Shanmukh Chebrolu, Rahul Gowda, Sripad Sirikonda",
                     "description": "bouncE is an innovative educational trading platform designed to empower users to learn about the financial markets without risking real money. By combining paper trading with interactive podcasts, lessons, real-time news updates, and AI-driven insights, bouncE creates a rich, engaging ecosystem where users can experiment, learn, and grow their financial acumen.",
-                    "photo": "",
                     "link": "https://devpost.com/software/bounce-m4zcho"
                 },
                 {
@@ -224,7 +220,6 @@ export const sh25Data = {
                     "placement": "3rd Place",
                     "authors": "Braulio Duran, Juan Cruz, Alex Bernatowicz, Daniel Luangnikone",
                     "description": "Class Flow provides a secure login system and unique dashboards tailored for students and professors, allowing them to manage courses, assignments, and grades more efficiently.",
-                    "photo": "",
                     "link": "https://devpost.com/software/classflow"
                 },
             ]
@@ -238,7 +233,6 @@ export const sh25Data = {
                     "placement": "1st Place",
                     "authors": "Kristine Ma, Rajvi Shah, Rasleen Dhaliwal, Kyla Gonzalez, Eman Arsham",
                     "description": "PopUp Connect brings local markets to life! Businesses post vendor markets, giving creators a chance to sell in person. Vendors get exposure, businesses get traffic, and shoppers find markets nearby!",
-                    "photo": "",
                     "link": "https://devpost.com/software/popup-connect"
                 },
                 {
@@ -246,7 +240,6 @@ export const sh25Data = {
                     "placement": "2nd Place",
                     "authors": "John Gutama, Elizabeth Cardoso, Ali Azam, Michael Cortez, Andy Tran",
                     "description": "Every day food waste fills landfills harming the planet. FeedRescue redirects produce scraps to local farmers, cutting waste, supporting small businesses and fueling sustainable food systems. Join us!",
-                    "photo": "",
                     "link": "https://devpost.com/software/feedrescue"
                 },
                 {
@@ -254,7 +247,6 @@ export const sh25Data = {
                     "placement": "3rd Place",
                     "authors": "Claudia Varnas, Justin Cervantes, Mauricio Alvarez, Evelyn Johnson",
                     "description": "BiteSwipe revolutionizes the way you explore local food spots and how small businesses reach their community. With us, users can 'match' with hidden gems in their area according to their preferences.",
-                    "photo": "",
                     "link": "https://devpost.com/software/biteswipe-3dj2ch"
                 },
             ]
@@ -268,7 +260,6 @@ export const sh25Data = {
                     "placement": "1st Place",
                     "authors": "Justin Leon, Fernando Ramirez, Priyanjali Rudra, Jose Gonzalez",
                     "description": "SeaSaver is an innovative mobile app that empowers volunteers to clean up sea garbage smarter. With gamified challenges and rewards from sponsors, SeaSaver turns ocean cleanup into a movement.",
-                    "photo": "",
                     "link": "https://devpost.com/software/seasaver"
                 },
             ]
@@ -282,7 +273,6 @@ export const sh25Data = {
                     "placement": "SparkHacks Favorite",
                     "authors": "Sarim Siddiqui, Dylan Nguyen, Jeet Patel, Alexandra Duarte, Alliyah Manuel",
                     "description": "The Outing Otters social media app is a way for people to connect with others and build connections. It allows users to create and join events that fit their needs designed for introverts.",
-                    "photo": "",
                     "link": "https://devpost.com/software/outing-otters"
                 },
             ]

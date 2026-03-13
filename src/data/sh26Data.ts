@@ -174,7 +174,6 @@ export const sh26Data = {
                     "placement": "1st Place",
                     "authors": "Sara Alaidroos, Teresa Chirayil, Jeanette Nguyen, Zainab Ahmed, Dilpreet Sidhu",
                     "description": "OnStage is a discovery platform for film and creative professionals that helps scriptwriters, actors, directors, and crew find collaborators based on creative alignment.",
-                    "photo": "",
                     "link": "https://devpost.com/software/onstage-p54sot"
                 },
                 {
@@ -182,7 +181,6 @@ export const sh26Data = {
                     "placement": "2nd Place",
                     "authors": "Beyinah Alrashdan, Gulbadam Rejepova, Bushra Yazjanova, Jocelyn Heredia",
                     "description": "OpenCall is a match-based platform connecting writers and actors with producers through creative fit—not likes, followers, or connections. Think Tinder for film projects.",
-                    "photo": "",
                     "link": "https://devpost.com/software/open-call"
                 },
                 {
@@ -190,7 +188,6 @@ export const sh26Data = {
                     "placement": "3rd Place",
                     "authors": "Guillermo Ramirez, Adrian Anaya, Yehoon Choi, Andres Popoca, Esteban Garcia",
                     "description": "This project was made to allow content creators from all platforms to view their statistics in one hub. This gives access to users to collaborate and have potential sponsors based on the data shown.",
-                    "photo": "",
                     "link": "https://devpost.com/software/quant-tree"
                 },
             ]
@@ -204,7 +201,6 @@ export const sh26Data = {
                     "placement": "1st Place",
                     "authors": "Jeonghwan Park, Antonio Unabia, Disguised Coffee, Emilio Calvo, Steve Nuevaorlanda",
                     "description": "Workaholic is a short narrative game where a computer science intern races to finish a project on the day of the deadline. You must balance productivity with breaks in a stressful office environment.",
-                    "photo": "",
                     "link": "https://devpost.com/software/workaholic-30h7g9"
                 },
                 {
@@ -212,7 +208,6 @@ export const sh26Data = {
                     "placement": "2nd Place",
                     "authors": "Sheena Ansari, Nour Alsramah, Barakah Mulla, Deeya Rawat, Atulya Prasad",
                     "description": "Why CS at UIC is an interactive website that lets students explore the four year computer science journey through Unity game.",
-                    "photo": "",
                     "link": "https://devpost.com/software/why-cs-at-uic"
                 },
                 {
@@ -220,7 +215,6 @@ export const sh26Data = {
                     "placement": "3rd Place",
                     "authors": "Deniz Hincal, Yusuf Bagis, Sevval Sari",
                     "description": "A noir-style interactive murder mystery set in Chicago, following two connected murder, one at La Salle Station and one inside a private home. Our storytelling game puts the user in the shoes of a detective, which the detective investigates two murder scenes including 3 clues each, where they are only allowed to check 2 clues, they have to pay attention to details and figure out the murderer based on the given 4 suspects in the end.",
-                    "photo": "",
                     "link": "https://devpost.com/software/chinoir"
                 },
             ]
@@ -234,7 +228,6 @@ export const sh26Data = {
                     "placement": "1st Place",
                     "authors": "Sailesh Senthilkumar, Nathan Thokkudubiyyapu, Jovani Trejo",
                     "description": "Enterprises lose $15B annually on expired warranties. WarrantyWizard stops that. AI chatbot answers questions instantly. Invoice OCR eliminates data entry. Predictive alerts prevent missed claims. WarrantyWizard is an AI-powered warranty intelligence platform that helps organizations track, analyze, and proactively manage warranties for enterprise equipment and bulk purchases.",
-                    "photo": "",
                     "link": "https://devpost.com/software/warranty-wizard"
                 },
                 {
@@ -242,7 +235,6 @@ export const sh26Data = {
                     "placement": "2nd Place",
                     "authors": "Karthik Kesavarapu, Sripad Sirikonda, Shanmukh Chebrolu, Dheeraj Yerneni",
                     "description": "XOPYops is a real-time equipment lifecycle simulation and decision support dashboard. Real-time predictive maintenance that explains risk in plain language. See what could fail, why it matters, and when to act.",
-                    "photo": "",
                     "link": "https://devpost.com/software/xopyops"
                 },
                 {
@@ -250,7 +242,6 @@ export const sh26Data = {
                     "placement": "3rd Place",
                     "authors": "Revanth Pandeti, SaiKamalaksha Nimishakavi, Raef Waris",
                     "description": "FairFix combats the challenges of automotive maintenence by providing users/consumers with the best information for their car. aking sure car owners get the best quotes from repairs and aren't getting ripped off!",
-                    "photo": "",
                     "link": "https://devpost.com/software/fairfix"
                 },
             ]
@@ -264,7 +255,6 @@ export const sh26Data = {
                     "placement": "1st Place",
                     "authors": "JoAnn Johnson, Reava Kakadiya, Sameena Vasi",
                     "description": "Our project turns Wall-E’s world into a functional interface. The site explains their roles through visual storytelling and simplified POV dashboards show how they decide to detect and collect waste.",
-                    "photo": "",
                     "link": "https://devpost.com/software/earth-restoration-command-center"
                 },
             ]
@@ -278,7 +268,6 @@ export const sh26Data = {
                     "placement": "Special Challenge Winner",
                     "authors": "Diego Flores, Logan Loch, Ammar Bahrainwala, Deepikka Natarajan, Angelo Guerrero",
                     "description": "Toolsmith is a smart project planning assistant that helps you budget, and organize renovation or construction projects. Toolsmith can recommend products and ensure you stay within budget.",
-                    "photo": "",
                     "link": "https://devpost.com/software/toolsmith-f6sdv8"
                 },
             ]
@@ -292,7 +281,6 @@ export const sh26Data = {
                     "placement": "Special Challenge Winner",
                     "authors": "Bisher Hamdan, Inika Goyal, Parth Prajapati, Abdul Samad, Joonyoung Ma",
                     "description": "Your content calendar is a ghost town. Stop posting into the void. Step into a director's studio instead. Your next video? Episode 7, Season 2. Welcome to StoryVerse. Build your universe, not a post.",
-                    "photo": "",
                     "link": "https://devpost.com/software/storyverse-mh2kzl"
                 },
             ]
