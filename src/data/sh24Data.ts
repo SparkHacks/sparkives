@@ -1,14 +1,14 @@
-export const sh23Data = {
+export const sh24Data = {
     "name": "SparkHacks 2024 -- ",
     "slogan": "",
     "date": "02/09/2024 - 02/10/2024",
-    "participants": 0,
-    "projects": 0,
+    "participants": 251,
+    "projects": 47,
     "website": "",
     "opening": "",
     "closing": "",
     "gallery": "",
-    "devpost": "",
+    "devpost": "https://sparkhacks-2024.devpost.com/project-gallery",
 
     "team": {
         "directors": [
@@ -190,36 +190,120 @@ export const sh23Data = {
     "winners": 
     [
         {
-            "name" : "track name",
-            "submissions": 0, // do -1 if it is not a track (challenge/bonus award)
+            "name" : "Health Track",
+            "submissions": 16, 
             "placements": [
                 {
-                    "title": "",
+                    "title": "Rocket Pal",
                     "placement": "1st Place",
-                    "authors": "",
-                    "description": "",
+                    "authors": "Shrut Patel",
+                    "description": "Introducing RocketPal! Your daily companion for reaching new heights in well-being and mental health. Set tasks, track goals, and journal your journey to success. Reach for the stars with RocketPal!",
                     "photo": "",
-                    "link": ""
+                    "link": "https://devpost.com/software/rocket-pal"
                 },
                 {
-                    "title": "",
+                    "title": "zZz - Sleep Tracker",
                     "placement": "2nd Place",
-                    "authors": "",
-                    "description": "",
+                    "authors": "Trinh Phan, Uyen Duong, Thi Tran, Mightymanh Phan, Trong Gia Hung Nguyen ",
+                    "description": "As students, we recognize the challenges of obtaining sufficient quality sleep amidst our demanding schedules and deadlines. This struggle is not unique to us; it extends to anyone facing similar constraints. With the aspiration to enhance well-being and contribute to a more balanced day, we are excited to introduce our project: zZz - Sleep Tracker.",
                     "photo": "",
-                    "link": ""
+                    "link": "https://devpost.com/software/zzz-sleep-tracker"
                 },
-                {
-                    "title": "",
-                    "placement": "3rd Place",
-                    "authors": "",
-                    "description": "",
-                    "photo": "",
-                    "link": ""
-                },
-                // add/remove winners here
             ]
         },
-        // add more tracks here
+        {
+            "name" : "Empowerment Track",
+            "submissions": 7, 
+            "placements": [
+                {
+                    "title": "Kitabi Keeda",
+                    "placement": "1st Place",
+                    "authors": "Carmen Thom, William (Bill) Shepelak, Vansh Mattraa",
+                    "description": "As an NLP Engineer, having corpora is very vital. While protecting endangered and indigenous languages, having datasets of recorded language is also vital. This project combines these missions in one!",
+                    "photo": "",
+                    "link": "https://devpost.com/software/kitabi-keeda"
+                },
+                {
+                    "title": "Gather",
+                    "placement": "2nd Place",
+                    "authors": "Seyfal Sultanov, Dylen Greenenwald, Radison Akerman ",
+                    "description": "Life gets busy. Making time and decisions to recreate is not a trivial task for a variety of reasons. Most of us have busy schedules and exhausting occupations. Who has time or energy to plan and organize events -- and do so without creating conflicts?",
+                    "photo": "",
+                    "link": "https://devpost.com/software/gather-z15uxj"
+                },
+            ]
+        },
+        {
+            "name" : "John Deere: Sustainable Innovation Track",
+            "submissions": 12, 
+            "placements": [
+                {
+                    "title": "Co-Crop",
+                    "placement": "1st Place",
+                    "authors": "Martin Michel",
+                    "description": "We were really touched by the food desserts in less deserving communities, so we decided to come up with a more accessible and sustainable way to access healthy, fresh foods. Co-Crop is a website designed to serve as a community hub where members can meet, interact, and share crops with each other.",
+                    "photo": "",
+                    "link": "https://devpost.com/software/co-crop"
+                },
+                {
+                    "title": "Selector Analysis",
+                    "placement": "2nd Place",
+                    "authors": "Abhi Neti, Dwij Shetty, Srivardhan Karnati, Sohum Bhole, Shri Patel",
+                    "description": "Our application takes in a crop and a state that the user inputs, and it outputs the top three counties that match the crop. This is decided by the moisture level, temperature, etc. that is best suited for the crop. By matching the crop to the right soil, we can ensure that we are responsibly and efficiently using the resources available to us.",
+                    "photo": "",
+                    "link": "https://devpost.com/software/ground-up"
+                },
+            ]
+        },
+        {
+            "name" : "Discover: DiscoverTech Track",
+            "submissions": 9, 
+            "placements": [
+                {
+                    "title": "FinTech Frontier",
+                    "placement": "1st Place",
+                    "authors": "Nathan Thokkudubiyyapu, Sailesh Senthilkumar, Shashank Chenna, Ronal Kavalackal",
+                    "description": "Introducing FinTech Frontier, the ultimate solution for effortlessly managing your finances on the go! This app allows users to track their spending and income, along with implementing a budget. The app also displays their finances in a graph along with categories they can categorize their spending into.",
+                    "photo": "",
+                    "link": "https://devpost.com/software/fintech-frontier-app"
+                },
+                {
+                    "title": "CreditQuest",
+                    "placement": "2nd Place",
+                    "authors": "Naga Maddipudi, Adrian Quiroz, Carol Aguilar Torres, Ugochukwu Alozie",
+                    "description": "Welcome to CreditQuest! Need help identifying good and bad practices with credit cards? Come take a look 👀. CreditQuest is a quiz game webapp to test the knowledge of a user and to give advice on credit card usage.",
+                    "photo": "",
+                    "link": "https://devpost.com/software/creditquest"
+                },
+            ]
+        },
+        {
+            "name" : "No-Code Track",
+            "submissions": 3, 
+            "placements": [
+                {
+                    "title": "PandaPals",
+                    "placement": "1st Place",
+                    "authors": "Rasleen Dhaliwal, Anagha Karnik, Thuy Duong Pham, Eman Arsham, Isabella Chen",
+                    "description": "Panda Pal is here to help you complete goals that will increase your PandaPal’s happiness. Keep your PandaPal happy, and you too will feel the happiness from within.",
+                    "photo": "",
+                    "link": "https://devpost.com/software/pandapals"
+                },
+            ]
+        },
+        {
+            "name" : "Crowd Favorite",
+            "submissions": -1, 
+            "placements": [
+                {
+                    "title": "Super Health App",
+                    "placement": "Crowd Favorite",
+                    "authors": "Aaryan Sharma, Ayush Bhardwaj",
+                    "description": "Our health app integrates essential services like telemedicine and mental health support for your wellness journey, akin to Tata Neu's versatile shopping experience.",
+                    "photo": "",
+                    "link": "https://devpost.com/software/superhealth"
+                },
+            ]
+        },
     ]
 }

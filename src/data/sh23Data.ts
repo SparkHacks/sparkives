@@ -205,7 +205,7 @@ export const sh23Data = {
             ]
         },
         {
-            "name" : "No Code Track",
+            "name" : "No-Code Track",
             "submissions": 3,
             "placements": [
                 {
