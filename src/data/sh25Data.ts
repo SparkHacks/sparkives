@@ -13,33 +13,165 @@ export const sh25Data = {
     "team": {
         "directors": [
             {
-                "name": "",
-                "role": "",
+                "name": "Jelena Gvero",
+                "role": "Director",
                 "photo": "",
-                "linkedin": "",
+                "linkedin": "https://www.linkedin.com/in/jelena-gvero/",
             },
             {
-                "name": "",
-                "role": "",
+                "name": "Yamaan Nandolia",
+                "role": "Director",
                 "photo": "",
-                "linkedin": "",
+                "linkedin": "https://www.linkedin.com/in/yamaan-nandolia/",
             },
-            // add more team members here
         ],
         "communications": [
-            // add team members here
+            {
+                "name": "Daniel Mroz",
+                "role": "Communications Lead",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/mroz-daniel/",
+            },
+            {
+                "name": "Kaustubha Medikundam",
+                "role": "Communications",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/kmedikundam/",
+            },
+            {
+                "name": "Lakshmi Krishnan",
+                "role": "Communications",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/lkris2/",
+            },
         ],
         "logistics": [
-            // add team members here
+            {
+                "name": "Aarav Surkatha",
+                "role": "Logistics Lead",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/aarav-surkatha/",
+            },
+            {
+                "name": "Karina Latasiewicz",
+                "role": "Logistics Lead",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/karina-latasiewicz/",
+            },
+            {
+                "name": "Gerard Wilbert",
+                "role": "Logistics",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/gerard-wilbert-a94636291/",
+            },
+            {
+                "name": "Nathan Trinh",
+                "role": "Logistics",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/khoi-nguyen-trinh/",
+            },
         ],
         "experience": [
-            // add team members here
+            {
+                "name": "Yasmin Sawaf",
+                "role": "Experience Lead",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/yasmin-sawaf/",
+            },
+            {
+                "name": "Naga Maddipudi",
+                "role": "Experience Lead",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/naga-maddipudi/",
+            },
+            {
+                "name": "Kaito Sekiya",
+                "role": "Experience",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/kaitosekiya/",
+            },
+            {
+                "name": "Krisha Patel",
+                "role": "Experience",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/krisha-patel-61b458220/",
+            },
+            {
+                "name": "Rahin Jain",
+                "role": "Experience",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/rahinjain/",
+            },
         ],
         "outreach": [
-            // add team members here
+            {
+                "name": "Brenda Leyva",
+                "role": "Outreach Lead",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/brleyva/",
+            },
+            {
+                "name": "Fey Ogutuga",
+                "role": "Outreach Lead",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/fey-ogutuga-8b89a0216/",
+            },
+            {
+                "name": "Amy Kodama",
+                "role": "Outreach",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/amykodama/",
+            },
+            {
+                "name": "Khin Yuupar Myat",
+                "role": "Outreach",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/khinyuuparmyat/",
+            },
+            {
+                "name": "Niharika Patil",
+                "role": "Outreach",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/niharika-patil1468/",
+            },
+            {
+                "name": "Yacine Niasse",
+                "role": "Outreach",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/yacineniasse/",
+            },
         ],
         "webdev": [
-            // add team members here
+            {
+                "name": "Kevin Cordero",
+                "role": "Web Development Lead",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/kevin-cordero/",
+            },
+            {
+                "name": "Hamza Gaziuddin",
+                "role": "Web Development Lead",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/hamza-gaziuddin/",
+            },
+            {
+                "name": "Adrian Knight",
+                "role": "Web Development",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/adrian-o-knight/",
+            },
+            {
+                "name": "Florianne Che",
+                "role": "Web Development",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/florianne-che/",
+            },
+            {
+                "name": "Manh Phan",
+                "role": "Web Development",
+                "photo": "",
+                "linkedin": "https://www.linkedin.com/in/manhphan1801/",
+            },
         ]
     },
 

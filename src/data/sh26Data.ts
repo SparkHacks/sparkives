@@ -14,13 +14,13 @@ export const sh26Data = {
         "directors": [
             {
                 "name": "Naga Maddipudi",
-                "role": "Co-Director",
+                "role": "Director",
                 "photo": "",
                 "linkedin": "https://www.linkedin.com/in/naga-maddipudi/",
             },
             {
                 "name": "Kaito Sekiya",
-                "role": "Co-Director",
+                "role": "Director",
                 "photo": "",
                 "linkedin": "https://www.linkedin.com/in/kaitosekiya/",
             },

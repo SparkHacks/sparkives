@@ -14,13 +14,13 @@ export const sh24Data = {
         "directors": [
             {
                 "name": "Nandana Sheri",
-                "role": "Co-Director",
+                "role": "Director",
                 "photo": "",
                 "linkedin": "https://www.linkedin.com/in/nandana-sheri/",
             },
             {
                 "name": "Darlene Marchan",
-                "role": "Co-Director",
+                "role": "Director",
                 "photo": "",
                 "linkedin": "https://www.linkedin.com/in/darlene-marchan/",
             }
