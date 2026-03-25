@@ -17,10 +17,14 @@ const tabs = ["About", "FAQ", "Apply"];
 	</div>
 
 	<!-- Content view -->
-	<div class="p-8">
-		<About id="about-page" class="content hidden" />
-		<FAQ id="faq-page" class="content hidden" />
-		<Apply id="apply-page" class="content hidden" />
+	<div id="about-page" class="p-4 content hidden">
+		<About />
+	</div>
+	<div id="faq-page" class="p-4 content hidden">
+		<FAQ />
+	</div>
+	<div id="apply-page" class="p-4 content hidden">
+		<Apply />
 	</div>
 </div>
 
@@ -32,6 +36,7 @@ const tabs = ["About", "FAQ", "Apply"];
 	// make default tab active
 	document.addEventListener("DOMContentLoaded", () => {
 		document.querySelector("#about")?.classList.add("tab-active");
+		document.querySelector("#about-page")?.classList.add("content-active");
 	}) 
 
 	tabs.forEach((tab, i) => {
