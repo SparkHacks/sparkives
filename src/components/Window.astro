@@ -10,9 +10,10 @@ interface Props {
   open?: boolean;
   headerColor?: string;
   defaultZLayer?: number;
+  customHeader?: string; // blank for default
 }
 
-const { id, title = "Window", initialX = 100, initialY = 100, width = "320px", open = true, headerColor = "sky", defaultZLayer = 10 } = Astro.props;
+const { id, title = "Window", initialX = 100, initialY = 100, width = "320px", open = true, headerColor = "sky", defaultZLayer = 10, customHeader="" } = Astro.props;
 
 const headerColorMap: Record<string, string> = {
   red:    "from-red-100 to-red-300",
@@ -30,18 +31,24 @@ const gradientClasses = headerColorMap[headerColor] ?? headerColorMap.sky;
 
 <div
   id={id}
-  class="window fixed overflow-hidden rounded-xl border-[4px] border-primary shadow-solid font-dot select-none text-lg"
+  class="select-none window fixed overflow-hidden rounded-xl border-[4px] border-primary shadow-solid font-dot select-none text-lg"
   data-z={defaultZLayer}
   data-initial-x={initialX}
   data-initial-y={initialY}
   style={`background: linear-gradient(to bottom, #FDF8DD, #FDEFD1); left:${initialX}px; top:${initialY}px; width:${width}; display:${open ? "block" : "none"}; z-index:${defaultZLayer};`}
 >
-  <div class={`window-titlebar flex items-center justify-between border-b-[3px] border-primary bg-linear-0 ${gradientClasses} px-3 py-2 cursor-grab`}>
-    <span class="text-primary flex-1">{title}</span>
-    <button class="window-close text-primary cursor-pointer">
-      <X stroke-width="4px"/>
-    </button>
-  </div>
+  <!-- header -->
+  <!-- { if (customHeader === "") ? -->
+    <div class={`window-titlebar flex items-center justify-between border-b-[3px] border-primary bg-linear-0 ${gradientClasses} px-3 py-2 cursor-grab`}>
+      <span class="text-primary flex-1">{title}</span>
+      <button class="window-close text-primary cursor-pointer">
+        <X stroke-width="4px"/>
+      </button>
+    </div>
+    <!-- :
+    <> -->
+  
+  <!-- end header -->
 
   <div class="p-4 select-text">
     <slot />

@@ -1,0 +1,65 @@
+---
+import About from "./About.astro";
+import FAQ from "./FAQ.astro";
+import Apply from "./Apply.astro";
+
+const tabs = ["About", "FAQ", "Apply"];
+---
+
+<div id="internet-window" class="select-none bg-transparent">
+	<!-- Tabs -->
+	<div id="" class="flex flex-row gap-4">
+		{Array.from(tabs).map((tab) => (
+			<div id={tab.toLowerCase()} class="tab bg-linear-0 from-sky-100 to-sky-300 px-4 py-2 border-[4px] border-primary rounded-xl cursor-pointer">
+				<h2>{tab.toUpperCase()}</h2>
+			</div>
+		))}
+	</div>
+
+	<!-- Content view -->
+	<div class="p-8">
+		<About id="about-page" class="content hidden" />
+		<FAQ id="faq-page" class="content hidden" />
+		<Apply id="apply-page" class="content hidden" />
+	</div>
+</div>
+
+
+<script>
+	const tabs = document.querySelectorAll(".tab");
+	const contents = document.querySelectorAll(".content"); 
+
+	// make default tab active
+	document.addEventListener("DOMContentLoaded", () => {
+		document.querySelector("#about")?.classList.add("tab-active");
+	}) 
+
+	tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => {
+		// change tab appearance
+        tabs.forEach(t => t.classList.remove("tab-active"));
+        
+        tab.classList.add("tab-active");
+
+		// change content TODO
+		contents.forEach(c => c.classList.remove("content-active"));
+        
+		var content_name = tab.id + "-page";
+		var content_obj = document.getElementById(content_name); 
+		content_obj?.classList.add("content-active");
+      });
+    });
+
+</script>
+
+
+<style>
+	.tab-active {
+		background: linear-gradient(#FDF8DD, #FDEFD1);
+		transform: scale(1.15);
+	}
+
+	.content-active {
+		display: block;
+	}
+</style>
