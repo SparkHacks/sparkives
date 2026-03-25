@@ -8,15 +8,21 @@ const tabs = ["About", "FAQ", "Apply"];
 
 <div id="internet-window" class="select-none bg-transparent">
 	<!-- Tabs -->
-	<div id="" class="flex flex-row gap-4">
+	<div id="" class="flex flex-row gap-2 mb-[-6px]">
 		{Array.from(tabs).map((tab) => (
-			<div id={tab.toLowerCase()} class="tab bg-linear-0 from-sky-100 to-sky-300 px-4 py-2 border-[4px] border-primary rounded-xl cursor-pointer">
-				<h2>{tab.toUpperCase()}</h2>
-			</div>
+			<svg id={tab.toLowerCase()} class="tab cursor-pointer" 
+				width="84" height="36" viewBox="0 0 84 36" fill="#bae6fd" xmlns="http://www.w3.org/2000/svg">
+				<path d="M3.13634 33.5H80.7441L74.3352 5.47872C73.6678 3.69149 72.6717 2.5 70.1814 2.5H13.6988C11.2085 2.5 10.2124 3.69149 9.54507 5.47872L3.13634 33.5Z"
+					stroke="black" stroke-width="5"
+					stroke-dasharray="0 77.75 55" />
+				<text x="50%" y="70%" text-anchor="middle" fill="black">{tab.toUpperCase()}</text>				
+			</svg>
 		))}
 	</div>
 
 	<!-- Content view -->
+	<div class="border-[3px] border-primary absolute left-0 right-0" />
+	
 	<div id="about-page" class="p-4 content hidden">
 		<About />
 	</div>
@@ -46,11 +52,10 @@ const tabs = ["About", "FAQ", "Apply"];
         
         tab.classList.add("tab-active");
 
-		// change content TODO
+		// change content
 		contents.forEach(c => c.classList.remove("content-active"));
         
-		var content_name = tab.id + "-page";
-		var content_obj = document.getElementById(content_name); 
+		var content_obj = document.getElementById(tab.id + "-page"); 
 		content_obj?.classList.add("content-active");
       });
     });
@@ -60,8 +65,10 @@ const tabs = ["About", "FAQ", "Apply"];
 
 <style>
 	.tab-active {
-		background: linear-gradient(#FDF8DD, #FDEFD1);
+		/* background: #FDF8DD; */
 		transform: scale(1.15);
+		fill: #FDF6DA;
+		z-index: 100;
 	}
 
 	.content-active {
