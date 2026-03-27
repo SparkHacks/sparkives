@@ -1,11 +1,41 @@
 ---
-
+const qna = [
+    {
+    "question": "Who can participate in SparkHacks?",
+    "answer": "Currently, only University of Illinois Chicago (UIC) students can participate in SparkHacks. While we would love to extend outside the university, at this current time, it is not possible. However, any student regardless of experience, major, or year are able to participate!"
+    },
+    {
+    "question": "Do I need a team to participate in SparkHacks?",
+    "answer": "Yes, a team is absolutely necessary for participation. Individual participation is not allowed due to devpost rules, and the event's nature is not conducive to solo participation. There are scheduled times to help with team formation to help find potential teammates."
+    },
+    {
+    "question": "QUESTIONNNNNN",
+    "answer": "ANSWERRRRR"
+    },
+    {
+    "question": "QUESTIONNNNNN",
+    "answer": "ANSWERRRRR"
+    },
+    {
+    "question": "QUESTIONNNNNN",
+    "answer": "ANSWERRRRR"
+    },
+]
 ---
 
-<div class="flex flex-col gap-8" style="text-wrap: pretty;">
+<div class="flex flex-col gap-4" style="text-wrap: pretty;">
     <h2 class="font-sans text-3xl font-black">FREQUENTLY ASKED QUESTIONS</h2>
     
-    <div class="flex">
-        <p>HI</p>
+    <div class="h-[350px] flex flex-col gap-8 overflow-y-scroll">
+        { Array.from(qna).map((pair, i) => (
+            <div class="flex flex-col">
+                <span class="text-2xl">
+                    {pair["question"]}
+                </span>
+                <span>
+                    {`>> ${pair["answer"]}`}
+                </span>
+            </div>
+        ))}
     </div>
 </div>

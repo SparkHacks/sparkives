@@ -63,7 +63,8 @@ const tabs = ["About", "FAQ", "Apply"];
 	document.addEventListener("DOMContentLoaded", () => {
 		document.querySelector("#internet-tab-0")?.classList.add("tab-active");
 		document.querySelector("#internet-page-0")?.classList.add("content-active");
-		url_bar.innerText = names[curr_page].toUpperCase();
+		if (url_bar)
+			url_bar.textContent = names[curr_page].toUpperCase();
 	}) 
 
 	// add listeners to each tab
@@ -104,7 +105,8 @@ const tabs = ["About", "FAQ", "Apply"];
         tabs.forEach(t => t.classList.remove("tab-active"));
         
         tab?.classList.add("tab-active");
-		url_bar.innerText = names[curr_page].toUpperCase();
+		if (url_bar)
+			url_bar.textContent = names[curr_page].toUpperCase();
 
 		// change content
 		contents.forEach(c => c.classList.remove("content-active"));
