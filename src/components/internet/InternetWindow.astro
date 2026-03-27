@@ -5,82 +5,119 @@ import About from "./About.astro";
 import FAQ from "./FAQ.astro";
 import Apply from "./Apply.astro";
 
-const tabs = {"About": "About SparkHacks", "FAQ": "Frequenty Asked Questions", "Apply": "Applying for SparkHacks"};
-let title = tabs["About"].toUpperCase();
+const tabs = ["About", "FAQ", "Apply"];
 ---
 
 <div id="internet-window" class="select-none bg-transparent">
-	<!-- Header -->
-	<div class={`select-none window-titlebar flex items-center justify-center gap-2 bg-linear-0 from-sky-100 to-sky-300 px-3 py-2 cursor-grab`}>
-		<ChevronLeft stroke-width="4px"/>
-		<ChevronRight stroke-width="4px"/>
-		<div class="bg-sky-200 rounded-xl px-4 flex-grow">
-			<span class="text-primary flex-1">{title}</span>
+	<div class={`select-none window-titlebar flex flex-col bg-linear-0 from-sky-100 to-sky-300 px-3 pt-2 gap-4 cursor-grab`}>
+		<!-- Header -->
+		<div class="flex flex-row items-center justify-center gap-2">
+			<ChevronLeft stroke-width="4px" id="prev-arrow" class="cursor-pointer" />
+			<ChevronRight stroke-width="4px" id="next-arrow" class="cursor-pointer" />
+			<div class="bg-sky-200 rounded-xl px-4 flex-grow cursor-text">
+				<span class="text-primary flex-1" id="url-bar"></span>
+			</div>
+			<button class="window-close text-primary cursor-pointer">
+			<X stroke-width="4px"/>
+			</button>
 		</div>
-		<button class="window-close text-primary cursor-pointer">
-		<X stroke-width="4px"/>
-		</button>
+
+		<!-- Tabs -->
+		<div class="flex flex-row gap-2 px-4 mb-[-6px]">
+			{Array.from(tabs).map((tab, i) => (
+				<svg id={`internet-tab-${i}`} class="tab cursor-pointer" 
+					width="84" height="36" viewBox="0 0 84 36" fill="#bae6fd" xmlns="http://www.w3.org/2000/svg">
+					<path d="M3.13634 33.5H80.7441L74.3352 5.47872C73.6678 3.69149 72.6717 2.5 70.1814 2.5H13.6988C11.2085 2.5 10.2124 3.69149 9.54507 5.47872L3.13634 33.5Z"
+						stroke="black" stroke-width="5"
+						stroke-dasharray="0 77.75 55" />
+					<text x="50%" y="70%" text-anchor="middle" fill="black">{tab.toUpperCase()}</text>				
+				</svg>
+			))}
+		</div>
 	</div>
 
-	<!-- Tabs -->
-	<div id="" class="flex flex-row gap-2 px-4 mb-[-6px]">
-		{Object.entries(tabs).forEach(([tab, desc]) => (
-			<svg id={tab.toLowerCase()} class="tab cursor-pointer" 
-				width="84" height="36" viewBox="0 0 84 36" fill="#bae6fd" xmlns="http://www.w3.org/2000/svg">
-				<path d="M3.13634 33.5H80.7441L74.3352 5.47872C73.6678 3.69149 72.6717 2.5 70.1814 2.5H13.6988C11.2085 2.5 10.2124 3.69149 9.54507 5.47872L3.13634 33.5Z"
-					stroke="black" stroke-width="5"
-					stroke-dasharray="0 77.75 55" />
-				<text x="50%" y="70%" text-anchor="middle" fill="black">{tab.toUpperCase()}</text>				
-			</svg>
-		))}
-	</div>
-
-	<!-- Content view -->
+	<!-- Border -->
 	<div class="border-[3px] border-primary absolute left-0 right-0" />
-	
-	<div id="about-page" class="p-4 content hidden">
+
+	<!-- Content view -->	
+	<div id="internet-page-0" class="p-4 content hidden">
 		<About />
 	</div>
-	<div id="faq-page" class="p-4 content hidden">
+	<div id="internet-page-1" class="p-4 content hidden">
 		<FAQ />
 	</div>
-	<div id="apply-page" class="p-4 content hidden">
+	<div id="internet-page-2" class="p-4 content hidden">
 		<Apply />
 	</div>
 </div>
 
 
 <script>
+	const names = ["About SparkHacks", "Frequenty Asked Questions", "Applying for SparkHacks"];
 	const tabs = document.querySelectorAll(".tab");
-	const contents = document.querySelectorAll(".content"); 
+	const contents = document.querySelectorAll(".content");
+	let url_bar = document.getElementById("url-bar"); 
+	let curr_page = 0;
 
 	// make default tab active
 	document.addEventListener("DOMContentLoaded", () => {
-		document.querySelector("#about")?.classList.add("tab-active");
-		document.querySelector("#about-page")?.classList.add("content-active");
+		document.querySelector("#internet-tab-0")?.classList.add("tab-active");
+		document.querySelector("#internet-page-0")?.classList.add("content-active");
+		url_bar.innerText = names[curr_page].toUpperCase();
 	}) 
 
+	// add listeners to each tab
 	tabs.forEach((tab, i) => {
       tab.addEventListener("click", () => {
+		change_tab(i);
+      });
+    });
+
+	// chevron arrows
+	const prev = document.getElementById("prev-arrow");
+	const next = document.getElementById("next-arrow");
+
+	prev?.addEventListener("click", () => {
+		if (curr_page <= 0) {
+			change_tab(names.length-1);
+		}
+		else {
+			change_tab(curr_page-1);
+		}
+	})
+
+	next?.addEventListener("click", () => {
+		if (curr_page >= names.length-1) {
+			change_tab(0);
+		}
+		else {
+			change_tab(curr_page+1);
+		}
+	})
+
+	// @param: i -- the index of the tab to make active
+	function change_tab(tab_ind:number) {
+		curr_page = tab_ind;
+		let tab = document.getElementById("internet-tab-" + tab_ind);
+
 		// change tab appearance
         tabs.forEach(t => t.classList.remove("tab-active"));
         
-        tab.classList.add("tab-active");
+        tab?.classList.add("tab-active");
+		url_bar.innerText = names[curr_page].toUpperCase();
 
 		// change content
 		contents.forEach(c => c.classList.remove("content-active"));
         
-		var content_obj = document.getElementById(tab.id + "-page"); 
+		var content_obj = document.getElementById("internet-page-" + tab?.id.substring(13)); 
 		content_obj?.classList.add("content-active");
-      });
-    });
+	}
 
 </script>
 
 
 <style>
 	.tab-active {
-		/* background: #FDF8DD; */
 		transform: scale(1.15);
 		fill: #FDF6DA;
 		z-index: 100;
