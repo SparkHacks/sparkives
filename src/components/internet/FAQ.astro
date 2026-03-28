@@ -30,10 +30,13 @@ const qna = [
         { Array.from(qna).map((pair, i) => (
             <div class="flex flex-col">
                 <span class="text-2xl">
+                    <span class="font-extrabold">Q. </span>
                     {pair["question"]}
                 </span>
                 <span>
-                    {`>> ${pair["answer"]}`}
+                    {`>>`} 
+                    <span class="font-extrabold">A. </span>
+                    {pair["answer"]}
                 </span>
             </div>
         ))}

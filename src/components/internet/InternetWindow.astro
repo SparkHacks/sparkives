@@ -4,8 +4,11 @@ import { ChevronLeft, ChevronRight, X } from "@lucide/astro";
 import About from "./About.astro";
 import FAQ from "./FAQ.astro";
 import Apply from "./Apply.astro";
+import Sagas from "./Sagas.astro";
 
-const tabs = ["About", "FAQ", "Apply"];
+// for adding new tabs
+// this needs to be updated as well as the `names` array down in the <script> !
+const tabs = ["About", "FAQ", "Apply", "Sagas"];
 ---
 
 <div id="internet-window" class="select-none bg-transparent">
@@ -49,11 +52,14 @@ const tabs = ["About", "FAQ", "Apply"];
 	<div id="internet-page-2" class="p-4 content hidden">
 		<Apply />
 	</div>
+	<div id="internet-page-3" class="p-4 content hidden">
+		<Sagas />
+	</div>
 </div>
 
 
 <script>
-	const names = ["About SparkHacks", "Frequenty Asked Questions", "Applying for SparkHacks"];
+	const names = ["About SparkHacks", "Frequenty Asked Questions", "Applying for SparkHacks", "What's it Like to be Part of the Board?"];
 	const tabs = document.querySelectorAll(".tab");
 	const contents = document.querySelectorAll(".content");
 	let url_bar = document.getElementById("url-bar"); 
