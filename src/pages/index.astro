@@ -2,6 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Window from "../components/Window.astro";
 import Dock from "../components/Dock.astro";
+import Team from "../components/Team.astro";
+import { sh25Data } from "../data/sh25Data";
+import { sh26Data } from "../data/sh26Data";
+import { teamWindowConfig } from "../data/teamWindowConfig";
 import { Banana, Folder } from "@lucide/astro";
 import YearGrid from "../components/YearGrid.astro";
 import { icons } from "../assets/svgBank";
@@ -12,6 +16,11 @@ const dockItems = [
 	{ id: "", label: "Internet", icon: "internet" },
 	{ id: "", label: "Trash", icon: "trash" },
 ] as const;
+
+const yearTeamWindows = [
+	{ year: 2025, id: "win-2025", data: sh25Data, teams: teamWindowConfig[2025], x: 220, y: 260 },
+	{ year: 2026, id: "win-2026", data: sh26Data, teams: teamWindowConfig[2026], x: 280, y: 320 },
+];
 
 const numRows = 6;
 const iconsPerRow = 20;
@@ -42,11 +51,49 @@ const iconsPerRow = 20;
 		<YearGrid />
 	</Window>
 
-	<Window id="win-2025" title="Past Years Archive" initialX={220} initialY={260} open={false} headerColor="green">
-		<p>2025</p>
-	</Window>
+	{yearTeamWindows.map((yearWindow) => (
+		<Window
+			id={yearWindow.id}
+			title={`${yearWindow.year} Team Archive`}
+			initialX={yearWindow.x}
+			initialY={yearWindow.y}
+			open={false}
+			headerColor="green"
+		>
+			<div class="space-y-3">
+				<p>{yearWindow.data.name}</p>
+				<div class="flex flex-wrap gap-2">
+					{yearWindow.teams.map((team) => (
+						<button
+							data-open={team.id}
+							type="button"
+							class="cursor-pointer rounded-md border-2 border-primary bg-[#F8E9C3] px-3 py-1 font-dot text-primary shadow-solid transition hover:-translate-y-0.5"
+						>
+							{team.label}
+						</button>
+					))}
+				</div>
+			</div>
+		</Window>
+	))}
 
-	<Dock items={dockItems} />
+	{yearTeamWindows.flatMap((yearWindow) =>
+		yearWindow.teams.map((team) => (
+			<Window
+				id={team.id}
+				title={team.title}
+				initialX={team.x}
+				initialY={team.y}
+				open={false}
+				headerColor={team.color}
+				width={team.width}
+			>
+				<Team title={team.title} members={yearWindow.data.team[team.teamKey]} />
+			</Window>
+		))
+	)}
+
+	<Dock items={[...dockItems]} />
 </Layout>
 
 <style>
@@ -98,4 +145,5 @@ const iconsPerRow = 20;
 		from { transform: translateX(-50%); }
 		to { transform: translateX(0); }
 	}
+
 </style>
