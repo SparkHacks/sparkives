@@ -71,6 +71,25 @@ const currentYearTeams = teamDataMap[id || ""] || [];
       </button>
     </div>
   
+    <div class="absolute p-4">
+      <div class="flex flex-col gap-2">
+        <button
+        data-open={yearData?.year ? `${yearData.year}-winners` : ""}
+        class="dock-btn group relative flex flex-col items-center justify-center"
+        title="Winners"
+        >
+          
+          <span
+            class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
+            style="filter: drop-shadow(2px 4px 0px black)"
+            set:html={icons["winners"]}
+          />
+        </button>
+
+        Winners
+      </div>
+    </div>
+  
   <div class="p-4 select-text flex flex-col gap-5 justify-center items-center">
     <h1 class="font-bold font-sans text-3xl">{title}</h1>
     <div id="about" class="text-center">
