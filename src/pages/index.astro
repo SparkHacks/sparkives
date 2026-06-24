@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import InfoWindow from "../components/info/InfoWindow.astro";
+import InternetWindow from "../components/internet/InternetWindow.astro";
 import Window from "../components/Window.astro";
 import Dock from "../components/Dock.astro";
 import Team from "../components/Team.astro";
@@ -13,7 +15,7 @@ import { icons } from "../assets/svgBank";
 const dockItems = [
 	{ id: "win-finder", label: "Finder", icon: "computer" },
 	{ id: "", label: "Mail", icon: "mail" },
-	{ id: "", label: "Internet", icon: "internet" },
+	{ id: "complete-overview", label: "Internet", icon: "internet" },
 	{ id: "", label: "Trash", icon: "trash" },
 ] as const;
 
@@ -28,13 +30,13 @@ const iconsPerRow = 20;
 
 <Layout title="Sparkives">
 
-	<div class="flex flex-col items-end">
+	<div class="select-none flex flex-col items-end">
 		<h1 class="font-sans text-6xl font-black">Sparkhacks Archive</h1>
 		<p class="font-dot text-2xl">Walk through our past!</p>
 	</div>
 
 	<!-- SCROLLING BACKGROUND -->
-	<div class="bg-scroll-container">
+	<div class="select-none bg-scroll-container">
 		{Array.from({ length: numRows }).map((_, rowIndex) => (
 			<div class={`bg-scroll-row ${rowIndex % 2 === 0 ? "scroll-left" : "scroll-right"}`}>
 				<div class="bg-scroll-track">
@@ -46,7 +48,7 @@ const iconsPerRow = 20;
 		))}
 	</div>
 
-	<!-- WINDOWS -->
+	<!-- ---------------- WINDOWS ------------------ -->	
 	<Window id="win-finder" title="Past Years Archive" initialX={120} initialY={160} open={true} headerColor="yellow" width="400px">
 		<YearGrid />
 	</Window>
