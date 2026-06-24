@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import InfoWindow from "../components/info/InfoWindow.astro";
 import InternetWindow from "../components/internet/InternetWindow.astro";
 import Window from "../components/Window.astro";
 import Dock from "../components/Dock.astro";
@@ -38,16 +39,20 @@ const iconsPerRow = 20;
 		))}
 	</div>
 
-	<!-- WINDOWS -->	
+	<!-- ---------------- WINDOWS ------------------ -->	
 	<Window id="win-finder" title="Past Years Archive" initialX={120} initialY={160} open={true} headerColor="yellow" width="400px">
 		<YearGrid />
 	</Window>
 
-	<Window id="win-2025" title="2025 Archive" initialX={220} initialY={260} open={false} headerColor="green">
-		<p>2025</p>
-	</Window>
 
-	
+	<!-- INFO WINDOWS -->
+	<InfoWindow id="win-2024" title="SparkHacks 2024" initialX={220} initialY={260} open={false} headerColor="purple"/>
+
+	<InfoWindow id="win-2025" title="SparkHacks 2025" initialX={220} initialY={260} open={false} headerColor="purple"/>
+
+	<InfoWindow id="win-2026" title="SparkHacks 2026" initialX={220} initialY={260} open={false} headerColor="purple"/>
+
+	<!-- OVERVIEW WINDOW -->
 	<Window id="complete-overview" title="About SparkHacks" initialX={360} initialY={120} open={true} headerColor="sky" width="720px" customWindow="internet">
 		<InternetWindow />
 	</Window>
