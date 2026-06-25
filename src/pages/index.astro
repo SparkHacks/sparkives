@@ -5,6 +5,7 @@ import InternetWindow from "../components/internet/InternetWindow.astro";
 import Window from "../components/Window.astro";
 import Dock from "../components/Dock.astro";
 import Team from "../components/Team.astro";
+import { sh24Data } from "../data/sh24Data";
 import { sh25Data } from "../data/sh25Data";
 import { sh26Data } from "../data/sh26Data";
 import { teamWindowConfig } from "../data/teamWindowConfig";
@@ -20,6 +21,7 @@ const dockItems = [
 ] as const;
 
 const yearTeamWindows = [
+	{ year: 2024, id: "win-2024", data: sh24Data, teams: teamWindowConfig[2024], x: 160, y: 200 },
 	{ year: 2025, id: "win-2025", data: sh25Data, teams: teamWindowConfig[2025], x: 220, y: 260 },
 	{ year: 2026, id: "win-2026", data: sh26Data, teams: teamWindowConfig[2026], x: 280, y: 320 },
 ];
