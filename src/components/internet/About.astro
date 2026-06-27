@@ -1,4 +1,5 @@
 ---
+import { Heart } from "@lucide/astro"
 import { Picture } from 'astro:assets';
 import sparkyImage from "../../assets/easter-eggs/sparky.webp";
 ---
@@ -8,13 +9,14 @@ import sparkyImage from "../../assets/easter-eggs/sparky.webp";
 
     <div class="flex flex-col gap-8 h-[350px] overflow-y-scroll" style="scrollbar-color: gray #ffffff00;">
         <section class="flex flex-row justify-center align-center items-center gap-8">
+            
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut velit  pretium, sodales ante placerat, sagittis enim. Quisque sit amet sodales  neque, vel pulvinar enim. Praesent consequat nulla quis placerat  lobortis. Mauris aliquam elit sit amet libero sollicitudin, aliquet  cursus turpis gravida. Fusce dolor ipsum, sagittis nec posuere nec,  dictum id est. Quisque consectetur odio turpis, ac sodales nunc congue  eu. 
+                SparkHacks is the University of Illinois Chicago's 24-hour hackathon where students create technology based projects. Starting in 2023, SparkHacks has become one of UIC's most active student-led tech experiences.
             </p>
             <Picture src={sparkyImage} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
         </section>
 
-        <section class="flex flex-row justify-center align-center items-center gap-8">
+        <section class="flex flex-row justify-center align-center items-center gap-8 pb-4">
             <Picture src={sparkyImage} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
             <p>
                 Vivamus viverra finibus ultricies. Aliquam egestas dui tellus, id  feugiat metus congue eget. Donec dapibus dolor turpis, sed ullamcorper  mauris dapibus et. Nulla finibus fringilla felis. Duis tincidunt in orci sit amet semper. Donec fringilla, leo at viverra malesuada.
