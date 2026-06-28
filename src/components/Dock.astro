@@ -15,7 +15,7 @@ interface Props {
 const { items } = Astro.props
 ---
 
-<div class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50" style="width:520px;">
+<div class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 select-none" style="width:520px;">
   <div class="absolute bottom-0 left-0 w-full pointer-events-none [&>svg]:w-full [&>svg]:h-auto" set:html={icons.dockPad} />
 
   <div class="absolute left-0 w-full flex items-end justify-center gap-6 px-8" style="bottom: 15px;">
@@ -39,7 +39,7 @@ const { items } = Astro.props
 </div>
 
 <script>
-  for (const btn of document.querySelectorAll<HTMLElement>(".dock-btn")) {
+  for (const btn of document.querySelectorAll<HTMLElement>(".dock-btn, .folder-btn, .team-btn, .winner-btn")) {
     const id = btn.dataset.open;
     if (!id) continue;
     const win = document.getElementById(id);
@@ -54,7 +54,16 @@ const { items } = Astro.props
         win.dispatchEvent(new MouseEvent("mousedown", { bubbles: true }));
       }
     });
+    
   }
+  
+  // close all windows
+  const trash_btn = document.querySelector('button[title="Trash"]');
+  trash_btn?.addEventListener("click", () => {
+    for (const wind of document.querySelectorAll<HTMLElement>(".window"))   {
+      wind.style.display = "none";
+    }
+  });
 </script>
 
 <style>

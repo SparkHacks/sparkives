@@ -11,19 +11,24 @@ interface Props {
   headerColor?: string;
   defaultZLayer?: number;
   customWindow?: string; // blank for default
+  customBG?: string; // blank for default
 }
 
-const { id, title = "Window", initialX = 100, initialY = 100, width = "320px", open = true, headerColor = "sky", defaultZLayer = 10,  customWindow="" } = Astro.props;
+const { id, title = "Window", initialX = 100, initialY = 100, width = "320px", open = true, headerColor = "sky", defaultZLayer = 10,  customWindow="", customBG="" } = Astro.props;
 
 const headerColorMap: Record<string, string> = {
   red:    "from-red-100 to-red-300",
   orange: "from-orange-100 to-orange-300",
   yellow: "from-[#F8E9C3] to-[#F8DA94]",
   green:  "from-green-100 to-green-300",
+  cyan:   "from-cyan-100 to-cyan-300",
   sky:    "from-sky-100 to-sky-300",
   blue:   "from-blue-100 to-blue-300",
+  indigo: "from-indigo-100 to-indigo-500",
+  violet: "from-violet-100 to-violet-600",
   purple: "from-purple-100 to-purple-300",
   pink:   "from-pink-100 to-pink-300",
+  rose:   "from-rose-100 to-rose-900",
 };
 
 const gradientClasses = headerColorMap[headerColor] ?? headerColorMap.sky;
@@ -45,10 +50,10 @@ const gradientClasses = headerColorMap[headerColor] ?? headerColorMap.sky;
         <X stroke-width="4px"/>
       </button>
     </div>
-  
-  <div class="p-4 select-text">
-    <slot />
-  </div>
+    
+    <div class={customBG === "" ? "p-4 select-none" : "p-0 select-none"}>
+      <slot />
+    </div>
   }
   
   

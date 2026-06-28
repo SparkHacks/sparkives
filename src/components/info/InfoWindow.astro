@@ -1,133 +1,135 @@
 ---
 import { icons } from "../../assets/svgBank"
-import { X } from "@lucide/astro";
+import { Medal, Paintbrush, Sparkles, HardDrive, MessageCircleHeart, FileText, ShieldUser, Camera, MousePointerClick, X } from "@lucide/astro";
+import { Picture } from 'astro:assets';
+
 import {sh23Data} from "../../data/sh23Data.ts";
 import {sh24Data} from "../../data/sh24Data.ts";
 import {sh25Data} from "../../data/sh25Data.ts";
 import {sh26Data} from "../../data/sh26Data.ts";
 
+import SHLogo23 from "../../assets/logos/sh-23-logo.svg";
+import SHLogo24 from "../../assets/logos/sh-24-logo.gif";
+import SHLogo25 from "../../assets/logos/sh-25-logo.svg";
+import SHLogo26 from "../../assets/logos/sh-26-logo.svg";
+
+import { teamWindowConfig } from "../../data/teamWindowConfig";
+
+
 const teamDataMap: Record<string, any> = {
-  "win-2024": sh23Data,
-  "win-2024": sh24Data,
-  "win-2025": sh25Data,
-  "win-2026": sh26Data,
+  "win-2023": {data: sh23Data, team: teamWindowConfig[2023], logo: SHLogo23, color: "from-indigo-100 to-indigo-500"},
+  "win-2024": {data: sh24Data, team: teamWindowConfig[2024], logo: SHLogo24, color: "from-violet-100 to-violet-600"},
+  "win-2025": {data: sh25Data, team: teamWindowConfig[2025], logo: SHLogo25, color: "from-cyan-100 to-cyan-300"},
+  "win-2026": {data: sh26Data, team: teamWindowConfig[2026], logo: SHLogo26, color: "from-rose-100 to-rose-900"},
 };
-
-const years = [
-  { year: 2023, win: "win-2023", logo: "sh-24-logo.svg", date: "Feb 9th - 10th", participants: 200, site: ""},
-  { year: 2024, win: "win-2024", logo: "sh-24-logo.svg", date: "Feb 8th - 9th", participants: 300, site: ""},
-  { year: 2025, win: "win-2025", logo: "sh-25-logo.svg", date: "Feb 7th - 8th", participants: 300, site: ""},
-  { year: 2026, win: "win-2026", logo: "sh-26-logo.svg", date: "Feb 6th - 7th", participants: 300, site: ""},
-]
-
-const teamItems = [
-	{ id: "", label: "Outreach", icon: "outreach" },
-	{ id: "", label: "Experience", icon: "experience" },
-	{ id: "", label: "WebDev", icon: "webDev" },
-	{ id: "", label: "Comms", icon: "comms" },
-  { id: "", label: "Logistics", icon: "logistics" },
-  { id: "", label: "Directors", icon: "directors" },
-] as const;
-
 
 interface Props {
   id?: string;
   title?: string;
-  initialX?: number;
-  initialY?: number;
-  width?: string;
-  open?: boolean;
-  headerColor?: string;
   defaultZLayer?: number;
   customWindow?: string; // blank for default
 }
 
-const { id, title = "Window", initialX = 100, initialY = 100, width = "650px", open = true, headerColor = "purple", defaultZLayer = 10,  customWindow="" } = Astro.props;
+interface TeamConfig {
+  id: string,
+  label: string,
+  teamKey: string,
+  title: string,
+  x: number,
+  y: number,
+  width: string,
+  color: string
+}
 
-const headerColorMap: Record<string, string> = {
-  purple: "from-purple-100 to-purple-300",
-};
 
-const gradientClasses = headerColorMap["purple"];
+const { id, title = "Info Window", customWindow="" } = Astro.props;
 
-const yearData = years.find(y => y.win === id);
-const currentYearTeams = teamDataMap[id || ""] || [];
+const yearData = teamDataMap[id || ""] || [];
 ---
-
-<div
-  id={id}
-  class="select-none window fixed overflow-hidden rounded-xl border-[4px] border-primary shadow-solid font-dot select-none text-lg"
-  data-z={defaultZLayer}
-  data-initial-x={initialX}
-  data-initial-y={initialY}
-  style={`background: linear-gradient(to bottom, #FDF8DD, #FDEFD1); left:${initialX}px; top:${initialY}px; width:${width}; display:${open ? "block" : "none"}; z-index:${defaultZLayer};`}
->
-  <!-- header -->
-  { customWindow === "" &&
-    <div class={`window-titlebar flex items-center justify-between border-b-[3px] border-primary bg-linear-0 ${gradientClasses} px-3 py-2 cursor-grab`}>
-      <span class="text-primary flex-1">Info</span>
-      <button class="window-close text-primary cursor-pointer">
-        <X stroke-width="4px"/>
-      </button>
-    </div>
-  
-    <div class="absolute p-4">
-      <div class="flex flex-col gap-2">
-        <button
-        data-open={yearData?.year ? `${yearData.year}-winners` : ""}
-        class="dock-btn group relative flex flex-col items-center justify-center"
-        title="Winners"
-        >
-          
-          <span
-            class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
-            style="filter: drop-shadow(2px 4px 0px black)"
-            set:html={icons["winners"]}
-          />
-        </button>
-
-        Winners
-      </div>
-    </div>
-  
-  <div class="p-4 select-text flex flex-col gap-5 justify-center items-center">
-    <h1 class="font-bold font-sans text-3xl">{title}</h1>
-    <div id="about" class="text-center">
-      <p>Date: {yearData?.date ?? "TBD"}</p>
-      <p>Participants: {yearData?.participants ?? 0}</p>
-      <p>Click to view the team members!</p>
-    </div>
-    
-    <ul class="flex">
-        <div class="w-full flex items-end justify-center gap-6 px-8" style="bottom: 15px;">
-    {teamItems.map((item) => (
-
-      <div class="flex flex-col gap-2">
-        <button
-        data-open={item.id ?? ""}
-        class="dock-btn group relative flex flex-col items-center justify-center"
-        title={item.label}
+<div class="">
+  <!-- winners button -->
+  <div class="absolute">
+    <div class="flex flex-col gap-2 items-center">
+      <button
+      data-open={yearData?.year ? `${yearData.year}-winners` : ""}
+      class="winner-btn group relative flex flex-col items-center justify-center"
+      title="Winners"
       >
-        
-        <span
+        <Medal color="black" fill="#FFEAA2" size={64}
           class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
-          style="filter: drop-shadow(2px 4px 0px black)"
-          set:html={icons[item.icon]}
         />
       </button>
 
-      <span class="">
-          {item.label}
-        </span>
-        </div>
-      
-    ))}
+      Winners
+    </div>
   </div>
+
+  
+  <div class="select-none flex flex-col gap-5 justify-center items-center">
+    <div class="justify-center items-center text-center">
+      <h1 class="font-black font-sans text-3xl">{yearData?.data.name}</h1>
+      <h1 class="font-black font-sans text-xl">{yearData?.data.slogan}</h1>
+    </div>
+    
+    <Picture src={yearData?.logo} alt={`${yearData?.data.name} Logo`} class="border-[4px] border-primary rounded-xl w-45 h-45 bg-[#FBEAB0] object-contain" />
+
+    {/* info */}
+    <div id="about" class="text-center">
+      <p>Date: {yearData?.data.date ?? "TBD"}</p>
+      <p>Participants: {yearData?.data.participants ?? 0}</p>
+      <p>Click to view the team members!</p>
+    </div>
+    
+    {/* teams */}
+    <ul class="flex">
+      <div class="w-full flex items-end justify-center gap-6 px-8" style="bottom: 15px;">
+        <div class="flex flex-wrap gap-8">
+          {yearData?.team.map((team: TeamConfig) => (
+            <button
+                data-open={team.id}
+                type="button"
+                class="team-btn group relative flex flex-col items-center justify-center"
+            >
+              {/* this took me so long to figure out why the colors would NOT work
+                  but this span solution works but the major issue is that the icons will only fill the svgs with color 
+                  ONLY once the first instance has been opened, which is so silly goofy :/
+                  this lucide icon method works better LOL 
+                  the same issue showed up with the svg def linear-gradients but the solution here was just
+                  move the definitions to index.astro and that fixed everything
+                  this was hours of my life gone -JL*/}
+
+              {/* <span
+                class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
+                set:html={icons[team.teamKey]}
+              /> */}
+
+              {/* use a specific icon component for each team */}
+              <div class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2">
+                {team.teamKey === "directors" &&      <ShieldUser         color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
+                {team.teamKey === "communications" && <MessageCircleHeart color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
+                {team.teamKey === "logistics" &&      <FileText           color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
+                {team.teamKey === "experience" &&     <Sparkles           color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
+                {team.teamKey === "outreach" &&       <Paintbrush         color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
+                {team.teamKey === "media" &&          <Camera             color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
+                {team.teamKey === "webdev" &&         <HardDrive          color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
+              </div>
+
+              {team.label}
+            </button>
+          ))}
+        </div>
+
+      </div>
+
     </ul>
-    <a href="#" class="bg-[#C3FCC7] rounded-2xl p-3 pl-5 pr-5 border-3">Visit Site</a>
+    
+    <div>
+      <a href="#" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 transition hover:-translate-y-0.5 relative`}>Visit Site</a>
+      <MousePointerClick class="relative left-27 bottom-3" fill="white" size={32} />
+    </div>
+    
     <slot />
   </div>
-  }
   
   
   <!-- make blank for custom windows -->
@@ -138,87 +140,4 @@ const currentYearTeams = teamDataMap[id || ""] || [];
     </div>
   }
 
-
 </div>
-
-<script>
-  const REF_W = 1440;
-  const REF_H = 900;
-
-  function scaleAndPlace(win: HTMLElement) {
-    const rx = Number(win.dataset.initialX ?? 100);
-    const ry = Number(win.dataset.initialY ?? 100);
-    const sx = (rx / REF_W) * window.innerWidth;
-    const sy = (ry / REF_H) * window.innerHeight;
-    const maxX = window.innerWidth - win.offsetWidth;
-    const maxY = window.innerHeight - win.offsetHeight;
-    win.style.left = `${Math.min(Math.max(0, sx), maxX)}px`;
-    win.style.top  = `${Math.min(Math.max(0, sy), maxY)}px`;
-  }
-
-  let globalZ = Math.max(
-    10,
-    ...Array.from(document.querySelectorAll<HTMLElement>(".window")).map(w => Number(w.dataset.z ?? 10))
-  );
-
-  for (const btn of document.querySelectorAll<HTMLElement>("[data-open]")) {
-    btn.addEventListener("click", () => {
-      const target = document.getElementById(btn.dataset.open!);
-      if (target) target.style.display = "block";
-    });
-  }
-
-  for (const win of document.querySelectorAll<HTMLElement>(".window")) {
-    const titlebar = win.querySelector<HTMLElement>(".window-titlebar")!;
-    const closeBtn = win.querySelector<HTMLElement>(".window-close")!;
-
-    if (win.style.display !== "none") {
-      scaleAndPlace(win);
-    }
-
-    let wasHidden = win.style.display === "none";
-    new MutationObserver(() => {
-      const isHidden = win.style.display === "none";
-      if (wasHidden && !isHidden) {
-        scaleAndPlace(win);
-        win.style.zIndex = String(++globalZ);
-      }
-      wasHidden = isHidden;
-    }).observe(win, { attributes: true, attributeFilter: ["style"] });
-
-    win.addEventListener("mousedown", () => {
-      win.style.zIndex = String(++globalZ);
-    });
-
-    closeBtn.addEventListener("click", () => {
-      win.style.display = "none";
-    });
-
-    titlebar.addEventListener("mousedown", (e) => {
-      if ((e.target as HTMLElement).closest(".window-close")) return;
-      e.preventDefault();
-
-      let x = win.offsetLeft;
-      let y = win.offsetTop;
-      const dx = e.clientX - x;
-      const dy = e.clientY - y;
-
-      const onMove = (e: MouseEvent) => {
-        const maxX = window.innerWidth - win.offsetWidth;
-        const maxY = window.innerHeight - win.offsetHeight;
-        const newX = Math.min(Math.max(0, e.clientX - dx), maxX);
-        const newY = Math.min(Math.max(0, e.clientY - dy), maxY);
-        win.style.left = `${newX}px`;
-        win.style.top = `${newY}px`;
-      };
-
-      const onUp = () => {
-        window.removeEventListener("mousemove", onMove);
-        window.removeEventListener("mouseup", onUp);
-      };
-
-      window.addEventListener("mousemove", onMove);
-      window.addEventListener("mouseup", onUp);
-    });
-  }
-</script>
