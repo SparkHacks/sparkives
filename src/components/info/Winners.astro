@@ -1,0 +1,159 @@
+---
+import { Trophy, Columns2, Ellipsis, Files, Search, Blocks, BugPlay, GitBranch, Settings, Trash2, X } from "@lucide/astro";
+import { icons } from "../../assets/svgBank";
+
+
+import {sh23Data} from "../../data/sh23Data.ts";
+import {sh24Data} from "../../data/sh24Data.ts";
+import {sh25Data} from "../../data/sh25Data.ts";
+import {sh26Data} from "../../data/sh26Data.ts";
+
+interface Props {
+    year?: number;
+    id?: string;
+    title?: string;
+}
+
+const {year, id, title} = Astro.props;
+
+const dataMap: Record<string, any> = {
+    "2023": sh23Data.winners,
+    "2024": sh24Data.winners,
+    "2025": sh25Data.winners,
+    "2026": sh26Data.winners,
+}
+const winnersData = dataMap[year?.toString() || ""] || [];
+
+const tabs = Array.from({length: winnersData.length}, (_, ind) => "Track " + (ind+1));
+---
+<div class="flex bg-[#121B26] border-black border-3 h-125">
+    <!-- icons column -->
+    <div class="flex flex-col bg-linear-0 from-[#59595C] to-[#383C40] w-12 items-center p-2 gap-4">
+        <Files size={35} color="#D5D5D5" />
+        <Search size={35} color="#D5D5D5" />
+        <Blocks size={35} color="#D5D5D5" />
+        <BugPlay size={35} color="#D5D5D5" />
+        <GitBranch size={35} color="#D5D5D5" />
+        <div class="flex-grow"/>
+        <Settings size={35} color="#D5D5D5" />
+    </div>
+    <div class="border-black border-3"></div>
+
+    <!-- main -->
+    <div class="flex flex-col w-full">
+        <!-- tabs -->
+        <div class="flex flex-row bg-black align" style="border-bottom: solid 1px white">
+			{Array.from(tabs).map((tab, i) => (
+				<div id={`winners-tab-${year}-${i}`} class={`items-center winners-tab-${year} cursor-pointer flex bg-[#0F1114] border-white border px-2 py-1`}>
+					<Trophy color="white" size={20} />
+                    <p class="text-white px-1"> {tab}</p>				
+				</div>
+			))}
+
+            <div class="flex-grow"/>
+            <div class="flex items-center self-center">
+                <Columns2 class="px-1" color="white" size={22} />
+                <Ellipsis class="px-1" color="white" size={22} />
+            </div>
+		</div>
+
+        <!-- winners -->
+        <div class={`winners-content-${year} overflow-y-scroll text-wrap h-80 p-2 text-white`} style="scrollbar-color: gray #ffffff00;">
+            <!-- content added with JS -->
+        </div>
+
+        <!-- terminal -->
+        <div class="border-black border-3"></div>
+        <div class="flex flex-col bg-linear-0 from-[#59595C] to-[#383C40] h-32 w-full p-2 gap-4">
+            <div class="flex flex-row gap-2">
+                <div class="border-black border-2 rounded-xl w-10 h-4 bg-[#5B5B5B]"/>
+                <div class="border-black border-2 rounded-xl w-10 h-4 bg-[#5B5B5B]"/>
+                <div class="border-black border-2 rounded-xl w-10 h-4 bg-[#5B5B5B]"/>
+                <div class="border-black border-2 rounded-xl w-10 h-4 bg-[#929292]"/>
+                <div class="border-black border-2 rounded-xl w-10 h-4 bg-[#5B5B5B]"/>
+                <div class="flex-grow"/>
+                <Trash2 color="white" size={16} />
+                <X color="white" size={16} />
+            </div>
+
+            <div class="text-white text-sm">
+                <p>admin@SparkHacks:~$ HELLO WORLD</p>
+                <p>admin@SparkHacks:~$ CONGRATS WINNERS</p>
+                <p>admin@SparkHacks:~$ <span class="terminal-typing">|</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script define:vars={{ year, winnersData }}>
+	const tabs = document.querySelectorAll(`.winners-tab-${year}`);
+	const content = document.querySelector(`.winners-content-${year}`);
+	let curr_page = 0;
+
+	// make default tab active
+	document.addEventListener("DOMContentLoaded", () => {
+        change_track(0);
+    }) 
+
+	// add listeners to each tab
+	tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => {
+		change_track(i);
+      });
+    });
+
+
+	// @param: i -- the index of the tab to make active
+	function change_track(tab_ind) {
+		curr_page = tab_ind;
+		let tab = document.getElementById(`winners-tab-${year}-` + tab_ind);
+
+		// change tab appearance
+        tabs.forEach(t => t.classList.remove("track-active"));
+        
+        tab?.classList.add("track-active");
+
+		// change content
+        const newContent = 
+        `<div class="text-wrap ">
+            <h1 class="text-2xl"># ${winnersData[tab_ind].name}</h1>
+            <p>${winnersData[tab_ind].submissions != -1 ? winnersData[tab_ind].submissions + " submissions" : "Bonus Award!"}</p>
+            <br /><hr />
+
+            ${winnersData[tab_ind].placements.map((winner, i) => (
+                `
+                <br />
+                <h2><span class="no-underline text-xl"> ## ${winner.placement}: ${winner.title} </span>
+                    ---
+                    <a class="underline" href=${winner.link} target="_blank">View Project</a> 
+                </h2> 
+                <p>By: ${winner.authors}</p>
+                <p class="whitespace-pre-wrap">    ${winner.description}</p>
+                <br />
+                `
+            )).join('')}
+        </div>`;
+
+        content.innerHTML = newContent;
+	}
+
+    // typing terminal
+    const terms = document.querySelectorAll(".terminal-typing");
+    var typing = false;
+    setInterval(function() {
+        terms.forEach(t => t.innerHTML = typing ? "|" : "");
+        typing = !typing;
+    }, 500)
+
+</script>
+
+
+<style>
+	.track-active {
+        background-color: #121B26;
+        border: none;
+        border-top: solid 2px skyblue;
+        box-shadow: 0 2px 0 0 #121B26;
+		z-index: 100;
+	}
+</style>

@@ -4,12 +4,13 @@ import InfoWindow from "../components/info/InfoWindow.astro";
 import InternetWindow from "../components/internet/InternetWindow.astro";
 import Window from "../components/Window.astro";
 import Dock from "../components/Dock.astro";
-import Team from "../components/Team.astro";
+import Team from "../components/info/Team.astro";
+import Winners from "../components/info/Winners.astro";
+import { sh23Data } from "../data/sh23Data";
 import { sh24Data } from "../data/sh24Data";
 import { sh25Data } from "../data/sh25Data";
 import { sh26Data } from "../data/sh26Data";
 import { teamWindowConfig } from "../data/teamWindowConfig";
-import { Banana, Folder } from "@lucide/astro";
 import YearGrid from "../components/YearGrid.astro";
 import { icons } from "../assets/svgBank";
 
@@ -17,19 +18,20 @@ const dockItems = [
 	{ id: "win-finder", label: "Finder", icon: "computer" },
 	{ id: "", label: "Mail", icon: "mail" },
 	{ id: "complete-overview", label: "Internet", icon: "internet" },
+	{ id: "", label: "Settings", icon: "settings" },
 	{ id: "", label: "Trash", icon: "trash" },
 ] as const;
 
-const yearTeamWindows = [
-	{ year: 2024, id: "win-2024", data: sh24Data, teams: teamWindowConfig[2024], x: 160, y: 200 },
-	{ year: 2025, id: "win-2025", data: sh25Data, teams: teamWindowConfig[2025], x: 220, y: 260 },
-	{ year: 2026, id: "win-2026", data: sh26Data, teams: teamWindowConfig[2026], x: 280, y: 320 },
+const yearWindows = [
+	{ year: 2023, id: "win-2023", data: sh23Data, teams: teamWindowConfig[2023], x: 100, y: 140, color:"indigo" },
+	{ year: 2024, id: "win-2024", data: sh24Data, teams: teamWindowConfig[2024], x: 160, y: 200, color:"violet" },
+	{ year: 2025, id: "win-2025", data: sh25Data, teams: teamWindowConfig[2025], x: 220, y: 260, color:"cyan" },
+	{ year: 2026, id: "win-2026", data: sh26Data, teams: teamWindowConfig[2026], x: 280, y: 320, color:"rose" },
 ];
 
 const numRows = 6;
 const iconsPerRow = 20;
 ---
-
 <Layout title="Sparkives">
 
 	<div class="select-none flex flex-col items-end">
@@ -51,37 +53,40 @@ const iconsPerRow = 20;
 	</div>
 
 	<!-- ---------------- WINDOWS ------------------ -->	
-	<Window id="win-finder" title="Past Years Archive" initialX={120} initialY={160} open={true} headerColor="yellow" width="400px">
-		<YearGrid />
+	<Window id="complete-overview" title="About SparkHacks" initialX={360} initialY={120} open={true} headerColor="sky" width="720px" customWindow="internet">
+		<InternetWindow />
 	</Window>
 
-	{yearTeamWindows.map((yearWindow) => (
+	
+	<Window id="win-finder" title="Past Years Archive" initialX={100} initialY={340} open={true} headerColor="yellow" width="400px">
+		<YearGrid />
+	</Window>
+	
+	{
+		yearWindows.map((yearWind, i) => (
+			<Window id={`winners-${yearWind.year}`} title={`${yearWind.year} Winners`} initialX={300+(50*i)} initialY={100+(50*i)} open={false} headerColor={yearWind.color} width="800px" customBG="Winners">
+				<Winners year={yearWind.year} />
+			</Window>
+		))
+	}
+	
+	{yearWindows.map((yearWindow) => (
 		<Window
 			id={yearWindow.id}
-			title={`${yearWindow.year} Team Archive`}
+			title={`SparkHacks ${yearWindow.year} Info`}
 			initialX={yearWindow.x}
 			initialY={yearWindow.y}
+			headerColor={yearWindow.color}
 			open={false}
-			headerColor="green"
+			width="720px"
 		>
-			<div class="space-y-3">
-				<p>{yearWindow.data.name}</p>
-				<div class="flex flex-wrap gap-2">
-					{yearWindow.teams.map((team) => (
-						<button
-							data-open={team.id}
-							type="button"
-							class="cursor-pointer rounded-md border-2 border-primary bg-[#F8E9C3] px-3 py-1 font-dot text-primary shadow-solid transition hover:-translate-y-0.5"
-						>
-							{team.label}
-						</button>
-					))}
-				</div>
-			</div>
+			<InfoWindow
+				id={yearWindow.id}
+			/>
 		</Window>
 	))}
 
-	{yearTeamWindows.flatMap((yearWindow) =>
+	{yearWindows.flatMap((yearWindow) =>
 		yearWindow.teams.map((team) => (
 			<Window
 				id={team.id}
@@ -99,6 +104,47 @@ const iconsPerRow = 20;
 
 	<Dock items={[...dockItems]} />
 </Layout>
+
+<!-- gradients -->
+<svg class="absolute w-0 h-0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="red-gradient" gradientTransform="rotate(90)">
+		<stop offset="5%" stop-color="#fca5a5" />
+		<stop offset="95%" stop-color="#fee2e2" />
+    </linearGradient>
+	
+    <linearGradient id="orange-gradient" gradientTransform="rotate(90)">
+		<stop offset="5%" stop-color="#fdba74" />
+		<stop offset="95%" stop-color="#ffedd5" />
+    </linearGradient>
+	
+    <linearGradient id="yellow-gradient" gradientTransform="rotate(90)">
+		<stop offset="5%" stop-color="#F8DA94" />
+		<stop offset="95%" stop-color="#F8E9C3" />
+    </linearGradient>
+	
+    <linearGradient id="green-gradient" gradientTransform="rotate(90)">
+		<stop offset="5%" stop-color="#86efac" />
+		<stop offset="95%" stop-color="#dcfce7" />
+    </linearGradient>
+	
+    <linearGradient id="blue-gradient" gradientTransform="rotate(90)">
+		<stop offset="5%" stop-color="#93c5fd" />
+		<stop offset="95%" stop-color="#dbeafe" />
+    </linearGradient>
+	
+    <linearGradient id="purple-gradient" gradientTransform="rotate(90)">
+		<stop offset="5%" stop-color="#d8b4fe" />
+		<stop offset="95%" stop-color="#f3e8ff" />
+    </linearGradient>
+
+    <linearGradient id="pink-gradient" gradientTransform="rotate(90)">
+		<stop offset="5%" stop-color="#f0abfc" />
+		<stop offset="95%" stop-color="#fce7f3" />
+    </linearGradient>
+	
+  </defs>
+</svg>
 
 <style>
 	.bg-scroll-container {

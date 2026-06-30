@@ -1,6 +1,6 @@
 ---
 import { icons } from "../../assets/svgBank"
-import { Medal, Paintbrush, Sparkles, HardDrive, MessageCircleHeart, FileText, ShieldUser, Camera, MousePointerClick, X } from "@lucide/astro";
+import { Medal, LayoutGrid, Paintbrush, Sparkles, HardDrive, MessageCircleHeart, FileText, ShieldUser, Camera, MousePointerClick, X } from "@lucide/astro";
 import { Picture } from 'astro:assets';
 
 import {sh23Data} from "../../data/sh23Data.ts";
@@ -17,10 +17,10 @@ import { teamWindowConfig } from "../../data/teamWindowConfig";
 
 
 const teamDataMap: Record<string, any> = {
-  "win-2023": {data: sh23Data, team: teamWindowConfig[2023], logo: SHLogo23, color: "from-indigo-100 to-indigo-500"},
-  "win-2024": {data: sh24Data, team: teamWindowConfig[2024], logo: SHLogo24, color: "from-violet-100 to-violet-600"},
-  "win-2025": {data: sh25Data, team: teamWindowConfig[2025], logo: SHLogo25, color: "from-cyan-100 to-cyan-300"},
-  "win-2026": {data: sh26Data, team: teamWindowConfig[2026], logo: SHLogo26, color: "from-rose-100 to-rose-900"},
+  "win-2023": {year: 2023, data: sh23Data, team: teamWindowConfig[2023], logo: SHLogo23, color: "from-indigo-100 to-indigo-500"},
+  "win-2024": {year: 2024, data: sh24Data, team: teamWindowConfig[2024], logo: SHLogo24, color: "from-violet-100 to-violet-600"},
+  "win-2025": {year: 2025, data: sh25Data, team: teamWindowConfig[2025], logo: SHLogo25, color: "from-cyan-100 to-cyan-300"},
+  "win-2026": {year: 2026, data: sh26Data, team: teamWindowConfig[2026], logo: SHLogo26, color: "from-rose-100 to-rose-900"},
 };
 
 interface Props {
@@ -51,7 +51,7 @@ const yearData = teamDataMap[id || ""] || [];
   <div class="absolute">
     <div class="flex flex-col gap-2 items-center">
       <button
-      data-open={yearData?.year ? `${yearData.year}-winners` : ""}
+      data-open={yearData?.year ? `winners-${yearData.year}` : ""}
       class="winner-btn group relative flex flex-col items-center justify-center"
       title="Winners"
       >
@@ -63,6 +63,24 @@ const yearData = teamDataMap[id || ""] || [];
       Winners
     </div>
   </div>
+
+  <!-- project gallery -->
+  <div class="absolute right-4">
+    <div class="flex flex-col gap-2 items-center">
+      <a
+      href={yearData?.data.devpost} target=")_blank"
+      class="winner-btn group relative flex flex-col items-center justify-center"
+      title="Projects"
+      >
+        <LayoutGrid color="black" fill="#38cbe8" size={64}
+          class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
+        />
+      </a>
+
+      Projects
+    </div>
+  </div>
+  
 
   
   <div class="select-none flex flex-col gap-5 justify-center items-center">
@@ -88,7 +106,7 @@ const yearData = teamDataMap[id || ""] || [];
             <button
                 data-open={team.id}
                 type="button"
-                class="team-btn group relative flex flex-col items-center justify-center"
+                class="cursor-pointer team-btn group relative flex flex-col items-center justify-center"
             >
               {/* this took me so long to figure out why the colors would NOT work
                   but this span solution works but the major issue is that the icons will only fill the svgs with color 
@@ -123,8 +141,8 @@ const yearData = teamDataMap[id || ""] || [];
 
     </ul>
     
-    <div>
-      <a href="#" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 transition hover:-translate-y-0.5 relative`}>Visit Site</a>
+    <div class="transition hover:-translate-y-0.5 ">
+      <a href="#" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative`}>Visit Site</a>
       <MousePointerClick class="relative left-27 bottom-3" fill="white" size={32} />
     </div>
     

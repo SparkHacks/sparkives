@@ -15,11 +15,11 @@ interface Props {
 const { title, members } = Astro.props;
 
 const photoMap = {
-  ...import.meta.glob("../assets/easter-eggs/*.webp", { eager: true, import: "default" }),
-  ...import.meta.glob("../assets/sh-23/*.webp", { eager: true, import: "default" }),
-  ...import.meta.glob("../assets/sh-24/*.webp", { eager: true, import: "default" }),
-  ...import.meta.glob("../assets/sh-25/*.webp", { eager: true, import: "default" }),
-  ...import.meta.glob("../assets/sh-26/*.webp", { eager: true, import: "default" }),
+  ...import.meta.glob("../../assets/easter-eggs/*.webp", { eager: true, import: "default" }),
+  ...import.meta.glob("../../assets/sh-23/*.webp", { eager: true, import: "default" }),
+  ...import.meta.glob("../../assets/sh-24/*.webp", { eager: true, import: "default" }),
+  ...import.meta.glob("../../assets/sh-25/*.webp", { eager: true, import: "default" }),
+  ...import.meta.glob("../../assets/sh-26/*.webp", { eager: true, import: "default" }),
 } as Record<string, ImageMetadata>;
 ---
 
@@ -27,7 +27,7 @@ const photoMap = {
   <h2>{title}</h2>
   <div class="team-grid">
     {members.map((m) => {
-      const photoSrc = photoMap[`../assets/${m.photo}`];
+      const photoSrc = photoMap[`../../assets/${m.photo}`];
 
       return (
         <article class="team-card">

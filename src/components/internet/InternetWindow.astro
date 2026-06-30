@@ -102,6 +102,15 @@ const tabs = ["About", "FAQ", "Apply", "Sagas"];
 		}
 	})
 
+	// // maybe TODO: if window is closed, reset the current page
+	// const wind = document.querySelector<HTMLElement>("#internet-window");
+	// const styles = window.getComputedStyle(wind).display;
+
+	// if (styles == "none") {
+	// 	console.log("INTERNET CLOSEDDDD")
+	// 	change_tab(0);
+	// }
+
 	// @param: i -- the index of the tab to make active
 	function change_tab(tab_ind:number) {
 		curr_page = tab_ind;
