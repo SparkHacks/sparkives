@@ -28,7 +28,7 @@ const tabs = ["About", "FAQ", "Apply", "Sagas"];
 		<!-- Tabs -->
 		<div class="flex flex-row gap-2 px-4 mb-[-6px]">
 			{Array.from(tabs).map((tab, i) => (
-				<svg id={`internet-tab-${i}`} class="tab cursor-pointer" 
+				<svg id={`internet-tab-${i}`} class="tab cursor-pointer  transition hover:-translate-y-0.5" 
 					width="84" height="36" viewBox="0 0 84 36" fill="#bae6fd" xmlns="http://www.w3.org/2000/svg">
 					<path d="M3.13634 33.5H80.7441L74.3352 5.47872C73.6678 3.69149 72.6717 2.5 70.1814 2.5H13.6988C11.2085 2.5 10.2124 3.69149 9.54507 5.47872L3.13634 33.5Z"
 						stroke="black" stroke-width="5"
@@ -135,7 +135,7 @@ const tabs = ["About", "FAQ", "Apply", "Sagas"];
 
 <style>
 	.tab-active {
-		transform: scale(1.15);
+		transform: scale(1.25);
 		fill: #FDF6DA;
 		z-index: 100;
 	}

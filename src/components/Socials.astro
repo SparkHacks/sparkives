@@ -1,0 +1,57 @@
+---
+import { icons } from "../assets/svgBank"
+import { SquarePen, TextAlignJustify, Search, Star, CheckCheck } from "@lucide/astro";
+
+const socials = [
+    {name: "Archives", bg: "from-emerald-600 to-green-400", icon: "archives", link: "https://www.sparkhacks.org/", msg: "Visit our past!"},
+    {name: "Instagram", bg: "from-[#d300c5] via-[#FF0169] to-[#ff7a00]", icon: "instagram", link: "https://www.instagram.com/sparkhacksuic/", msg: "Keep up to date"},
+    {name: "LinkedIn", bg: "bg-[#0a66c2]", icon: "linkedin", link: "https://www.linkedin.com/company/sparkhacks/", msg: "Connect with our network"},
+    {name: "GitHub", bg: "from-[#181717] to-[#8534F3]", icon: "github", link: "http://github.com/sparkhacks/", msg: "View our projects"},
+    {name: "Email", bg: "from-[#001E62] to-[#D50032]", icon: "email", link: "mailto:sparkhacks@uic.edu", msg: "Contact us at sparkhacks@uic.edu"}
+]
+---
+<div class="flex flex-col">
+    <div class="flex flex-row p-1 gap-4 ">
+        <TextAlignJustify size={24} />
+        <div class="rounded-full w-full bg-neutral-300 p-1">
+            <Search size={16} color="gray" />
+        </div>
+        <SquarePen size={24} />
+    </div>
+
+    <div>
+        {Array.from(socials).map((item) => (
+            <hr />
+            <a href={item.link} target="_blank">
+                <div class="flex p-1 items-center transition hover:-translate-y-0.5">
+                    {/* icon */}
+                    <div class={`rounded-full bg-linear-0 ${item.bg} w-15 h-15 p-3`}>
+                        <span set:html={icons[item.icon]} />
+                    </div>
+
+                    <div class="flex flex-col px-4">
+                        <h2 class="text-2xl">{item.name}</h2>
+                        <p class="text-base">{item.msg}</p>
+                    </div>
+
+                    <div class="flex-grow" />
+
+                    <div class="flex flex-col w-10 py-1 items-center justify-center gap-2">
+                        <Star class="important-star" />
+                        <CheckCheck class="read-check" />
+                    </div>
+                </div>
+            </a>
+        ))}
+    </div>
+</div> 
+
+<style>
+.important-star:hover {
+    fill: gold;
+}
+
+.read-check:hover {
+    stroke: dodgerblue;
+}
+</style>

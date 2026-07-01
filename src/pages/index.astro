@@ -5,6 +5,7 @@ import InternetWindow from "../components/internet/InternetWindow.astro";
 import Window from "../components/Window.astro";
 import Dock from "../components/Dock.astro";
 import Team from "../components/info/Team.astro";
+import Socials from "../components/Socials.astro";
 import Winners from "../components/info/Winners.astro";
 import { sh23Data } from "../data/sh23Data";
 import { sh24Data } from "../data/sh24Data";
@@ -16,7 +17,7 @@ import { icons } from "../assets/svgBank";
 
 const dockItems = [
 	{ id: "win-finder", label: "Finder", icon: "computer" },
-	{ id: "", label: "Mail", icon: "mail" },
+	{ id: "socials-window", label: "Mail", icon: "mail" },
 	{ id: "complete-overview", label: "Internet", icon: "internet" },
 	{ id: "", label: "Settings", icon: "settings" },
 	{ id: "", label: "Trash", icon: "trash" },
@@ -56,7 +57,10 @@ const iconsPerRow = 20;
 	<Window id="complete-overview" title="About SparkHacks" initialX={360} initialY={120} open={true} headerColor="sky" width="720px" customWindow="internet">
 		<InternetWindow />
 	</Window>
-
+	
+	<Window id="socials-window" title="Socials" initialX={900} initialY={240} open={true} headerColor="green" width="450px">
+		<Socials />
+	</Window>
 	
 	<Window id="win-finder" title="Past Years Archive" initialX={100} initialY={340} open={true} headerColor="yellow" width="400px">
 		<YearGrid />
