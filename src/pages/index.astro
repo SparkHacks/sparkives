@@ -41,7 +41,7 @@ const iconsPerRow = 20;
 	</div>
 
 	<!-- SCROLLING BACKGROUND -->
-	<div class="select-none bg-scroll-container">
+	<div class="select-none bg-container" id="scrolling-background">
 		{Array.from({ length: numRows }).map((_, rowIndex) => (
 			<div class={`bg-scroll-row ${rowIndex % 2 === 0 ? "scroll-left" : "scroll-right"}`}>
 				<div class="bg-scroll-track">
@@ -51,6 +51,11 @@ const iconsPerRow = 20;
 				</div>
 			</div>
 		))}
+	</div>
+	
+	<!-- LANDSCAPE BACKGROUND -->
+	<div class="select-none bg-container hidden" id="landscape-background">
+		<span set:html={icons.landscape} />
 	</div>
 
 	<!-- ---------------- WINDOWS ------------------ -->	
@@ -151,18 +156,25 @@ const iconsPerRow = 20;
 </svg>
 
 <style>
-	.bg-scroll-container {
+	.bg-container {
 		position: fixed;
 		inset: 0;
 		overflow: hidden;
-		transform: rotate(-9deg) scale(1.3);
 		z-index: -1;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		gap: 100px;
 		pointer-events: none;
 		background: linear-gradient(0deg, #7DBBFD 0%, #BDE5E7 87%);
+	}
+	
+	#scrolling-background {
+		gap: 100px;
+		transform: rotate(-9deg) scale(1.3);
+	}
+	
+	#landscape-background {
+		justify-content: end;
 	}
 
 	.bg-scroll-row {
@@ -198,6 +210,10 @@ const iconsPerRow = 20;
 	@keyframes scrollRight {
 		from { transform: translateX(-50%); }
 		to { transform: translateX(0); }
+	}
+
+	.hidden {
+		display: none;
 	}
 
 </style>

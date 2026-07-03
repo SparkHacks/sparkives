@@ -64,6 +64,27 @@ const { items } = Astro.props
       wind.style.display = "none";
     }
   });
+
+  // change background
+  var scroll_bg = true;
+
+  const settings_btn = document.querySelector('button[title="Settings');
+  const scrolling_background = document.getElementById("scrolling-background");
+  const landscape_background = document.getElementById("landscape-background");
+  if (landscape_background && scrolling_background) {
+    settings_btn?.addEventListener("click", () => {
+      if (scroll_bg) {
+        landscape_background.classList.remove("hidden");
+        scrolling_background.classList.add("hidden");
+      }
+      else {
+        scrolling_background.classList.remove("hidden");
+        landscape_background.classList.add("hidden");
+      }
+
+      scroll_bg = !scroll_bg;
+    });
+  }
 </script>
 
 <style>
