@@ -2,7 +2,7 @@ export const sh26Data = {
     "name": "SparkHacks 2026",
     "slogan": "Lights, Camera, Hacktion!",
     "date": "02/06/2026 - 02/07/2026",
-    "participants": 289,
+    "participants": 300,
     "projects": 69,
     "website": "",
     "opening": "",

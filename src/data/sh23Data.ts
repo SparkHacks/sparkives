@@ -1,6 +1,6 @@
 export const sh23Data = {
     "name": "SparkHacks 2023",
-    "slogan": "",
+    "slogan": "Community",
     "date": "04/07/2023 - 04/08/2023",
     "participants": 176,
     "projects": 24,
