@@ -1,4 +1,5 @@
 ---
+// past years' overview archive
 import { icons } from "../../assets/svgBank"
 import { Medal, LayoutGrid, Paintbrush, Sparkles, HardDrive, MessageCircleHeart, FileText, ShieldUser, Camera, MousePointerClick, X } from "@lucide/astro";
 import { Picture } from 'astro:assets';
@@ -7,11 +8,13 @@ import {sh23Data} from "../../data/sh23Data.ts";
 import {sh24Data} from "../../data/sh24Data.ts";
 import {sh25Data} from "../../data/sh25Data.ts";
 import {sh26Data} from "../../data/sh26Data.ts";
+import {sh27Data} from "../../data/sh27Data.ts";
 
 import SHLogo23 from "../../assets/logos/sh-23-logo.svg";
 import SHLogo24 from "../../assets/logos/sh-24-logo.gif";
 import SHLogo25 from "../../assets/logos/sh-25-logo.svg";
 import SHLogo26 from "../../assets/logos/sh-26-logo.svg";
+import question from "../../assets/logos/question.svg";
 
 import { teamWindowConfig } from "../../data/teamWindowConfig";
 
@@ -21,6 +24,7 @@ const teamDataMap: Record<string, any> = {
   "win-2024": {year: 2024, data: sh24Data, team: teamWindowConfig[2024], logo: SHLogo24, color: "from-violet-100 to-violet-600"},
   "win-2025": {year: 2025, data: sh25Data, team: teamWindowConfig[2025], logo: SHLogo25, color: "from-cyan-100 to-cyan-300"},
   "win-2026": {year: 2026, data: sh26Data, team: teamWindowConfig[2026], logo: SHLogo26, color: "from-rose-100 to-rose-900"},
+  "win-2027": {year: 2027, data: sh27Data, team: teamWindowConfig[2027], logo: question, color: "from-gray-100 to-gray-900"},
 };
 
 interface Props {
@@ -95,13 +99,14 @@ const yearData = teamDataMap[id || ""] || [];
     <div id="about" class="text-center">
       <p>Date: {yearData?.data.date ?? "TBD"}</p>
       <p>Participants: {yearData?.data.participants ?? 0}</p>
+      <p>Projects Submitted: {yearData?.data.projects ?? 0}</p>
       <p>Click to view the team members!</p>
     </div>
     
     {/* teams */}
     <ul class="flex">
       <div class="w-full flex items-end justify-center gap-6 px-8" style="bottom: 15px;">
-        <div class="flex flex-wrap gap-8">
+        <div class="mx-22 flex flex-wrap gap-12 gap-y-4 justify-center items-center">
           {yearData?.team.map((team: TeamConfig) => (
             <button
                 data-open={team.id}
@@ -128,6 +133,7 @@ const yearData = teamDataMap[id || ""] || [];
                 {team.teamKey === "logistics" &&      <FileText           color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
                 {team.teamKey === "experience" &&     <Sparkles           color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
                 {team.teamKey === "outreach" &&       <Paintbrush         color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
+                {team.teamKey === "design" &&         <Paintbrush         color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
                 {team.teamKey === "media" &&          <Camera             color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
                 {team.teamKey === "webdev" &&         <HardDrive          color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
               </div>

@@ -31,4 +31,13 @@ export const teamWindowConfig = {
     { id: "win-2026-experience", label: "Experience", teamKey: "experience", title: "2026 Experience Team", x: 440, y: 460, width: "920px", color: "yellow" },
     { id: "win-2026-webdev", label: "Web Dev", teamKey: "webdev", title: "2026 Web Development Team", x: 480, y: 500, width: "980px", color: "blue" },
   ],
+  2027: [
+    { id: "win-2027-directors", label: "Directors", teamKey: "directors", title: "2027 Directors", x: 320, y: 340, width: "820px", color: "orange" },
+    { id: "win-2027-comms", label: "Comms", teamKey: "communications", title: "2027 Communications Team", x: 360, y: 380, width: "860px", color: "pink" },
+    { id: "win-2027-logistics", label: "Logistics", teamKey: "logistics", title: "2027 Logistics Team", x: 360, y: 380, width: "920px", color: "green" },
+    { id: "win-2027-media", label: "Media", teamKey: "media", title: "2027 Media Team", x: 400, y: 420, width: "920px", color: "red" },
+    { id: "win-2027-design", label: "Design", teamKey: "design", title: "2027 Design Team", x: 400, y: 420, width: "920px", color: "blue" },
+    { id: "win-2027-experience", label: "Experience", teamKey: "experience", title: "2027 Experience Team", x: 440, y: 460, width: "920px", color: "yellow" },
+    { id: "win-2027-webdev", label: "Web Dev", teamKey: "webdev", title: "2027 Web Development Team", x: 480, y: 500, width: "980px", color: "purple" },
+  ],
 } as const;
