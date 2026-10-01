@@ -4,7 +4,7 @@ export const sh26Data = {
     "date": "02/06/2026 - 02/07/2026",
     "participants": 300,
     "projects": 69,
-    "website": "",
+    "website": "https://2026.sparkhacks.org/",
     "opening": "",
     "closing": "",
     "gallery": "",

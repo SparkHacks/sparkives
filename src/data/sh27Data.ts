@@ -10,6 +10,7 @@ export const sh27Data = {
     "gallery": "",
     "devpost": "",
 
+    // the outreach team has been split back into media + design!
     "team": {
         "directors": [
             {
