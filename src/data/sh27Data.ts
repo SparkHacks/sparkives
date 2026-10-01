@@ -158,13 +158,13 @@ export const sh27Data = {
                 "linkedin": "",
             },
             {
-                "name": "Levell Kensey",
+                "name": "Kahnishga Solaidurairaj",
                 "role": "Web Development",
                 "photo": "easter-eggs/anonymous.webp",
                 "linkedin": "",
             },
             {
-                "name": "Kahnishga Solaidurairaj",
+                "name": "Levell Kensey",
                 "role": "Web Development",
                 "photo": "easter-eggs/anonymous.webp",
                 "linkedin": "",
@@ -175,8 +175,8 @@ export const sh27Data = {
     "winners": 
     [
         {
-            "name" : "track name",
-            "submissions": 0, // do -1 if it is not a track (challenge/bonus award)
+            "name" : "SECRET TRACK",
+            "submissions": 0,
             "placements": [
                 {
                     "title": "",

@@ -7,6 +7,7 @@ import {sh23Data} from "../../data/sh23Data.ts";
 import {sh24Data} from "../../data/sh24Data.ts";
 import {sh25Data} from "../../data/sh25Data.ts";
 import {sh26Data} from "../../data/sh26Data.ts";
+import {sh27Data} from "../../data/sh27Data.ts";
 
 interface Props {
     year?: number;
@@ -21,7 +22,9 @@ const dataMap: Record<string, any> = {
     "2024": sh24Data.winners,
     "2025": sh25Data.winners,
     "2026": sh26Data.winners,
+    "2027": sh27Data.winners,
 }
+
 const winnersData = dataMap[year?.toString() || ""] || [];
 
 const tabs = Array.from({length: winnersData.length}, (_, ind) => "Track " + (ind+1));

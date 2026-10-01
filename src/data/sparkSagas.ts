@@ -1,5 +1,11 @@
 export const sparkSagas = [
     {
+        "quote": "It was so fun being a part of the board and seeing all our designs come to life at the hackathon!! I loved being able to get creative with all of the designs from the merch to the insta posts. My fav moment was the board photoshoot we organized together!",
+        "image": "",
+        "person": "Huda Syed",
+        "role": "Outreach 2026"
+    },
+    {
         "quote": "And I don't know what's got its teeth in me, but I'm about to bite back in anger. No amount of self-sought fury will bring back the glory of innocence",
         "image": "",
         "person": "tmbte",

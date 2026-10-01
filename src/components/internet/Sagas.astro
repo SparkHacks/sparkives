@@ -1,28 +1,63 @@
 ---
-import { sparkSagas } from "../../data/sparkSagas"
+import { Image } from "astro:assets";
 
+const sagas = [
+    {
+        "quote": "It was so fun being a part of the board and seeing all our designs come to life at the hackathon!! I loved being able to get creative with all of the designs from the merch to the insta posts. My fav moment was the board photoshoot we organized together!",
+        "image": "sh-26/huda.webp",
+        "person": "Huda Syed",
+        "role": "Outreach 2026"
+    },
+    {
+        "quote": "goated",
+        "image": "sh-26/stanley.webp",
+        "person": "Stanley Huang",
+        "role": "Logistics 2026"
+    },
+    {
+        "quote": "Hallo",
+        "image": "sh-26/kaito.webp",
+        "person": "Kaito Sekiya",
+        "role": "Director 2026"
+    },
+]
+
+const photoMap = {
+  ...import.meta.glob("../../assets/easter-eggs/*.webp", { eager: true, import: "default" }),
+  ...import.meta.glob("../../assets/sh-23/*.webp", { eager: true, import: "default" }),
+  ...import.meta.glob("../../assets/sh-24/*.webp", { eager: true, import: "default" }),
+  ...import.meta.glob("../../assets/sh-25/*.webp", { eager: true, import: "default" }),
+  ...import.meta.glob("../../assets/sh-26/*.webp", { eager: true, import: "default" }),
+} as Record<string, ImageMetadata>;
 ---
 
-<div class="flex flex-col gap-4" style="text-wrap: pretty;" style="scrollbar-color: gray #ffffff00;">
+<div class="flex flex-col gap-4" style="text-wrap: pretty; " style="scrollbar-color: gray #ffffff00;">
     <h2 class="font-sans text-3xl font-black">SAGAS FROM THE SPARKHACKS BOARD</h2>
 
-    <p>HIIII</p>
-    <div class="flex flex-col">
-        {
-            sparkSagas.map((item) => {
-                <div class="">
-                    <p>{item.quote}</p>
-                    <p>-- {item.person}</p>
+    <div class="h-[350px] overflow-y-scroll flex flex-col gap-6 py-4 justify-around" style="scrollbar-color: gray #ffffff00;">
+        { Array.from(sagas).map((item, i) => (
+            <div class="flex flex-row bg-cyan-100 border-black border-2 gap-3 p-4">
+                <div class="flex flex-col text-center w-24">
+                    <div class= "h-24 w-24">
+                        <Image
+                            src={photoMap[`../../assets/${item.image}`]}
+                            alt={`${item.person}`}
+                            width={200}
+                            height={200}
+                            loading="lazy"
+                            class="border-black border-2 transition-all duration-200 ease-out hover:scale-110"
+                            // style="width: 100%; height: 100%"
+                        />
+                    </div>
+                
+                    <p>{item["person"]}</p>
+                    <p class="text-sm">{item["role"]}</p>
                 </div>
-            })
-        }
+
+                <div class="p-2 bg-cyan-50 border-1" style="height: fit-content">
+                    {item["quote"]}
+                </div>
+            </div>
+        ))}
     </div>
-    
 </div>
-
-<script>
-import { sparkSagas } from "../../data/sparkSagas";
-
-    // console.log(sparkSagas);
-    sparkSagas.map((item)=> {console.log(item)})
-</script>
