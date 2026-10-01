@@ -148,7 +148,7 @@ const yearData = teamDataMap[id || ""] || [];
     </ul>
     
     <div class="transition hover:-translate-y-0.5 ">
-      <a href="#" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative`}>Visit Site</a>
+      <a href={yearData?.data.website} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer`}>Visit Site</a>
       <MousePointerClick class="relative left-27 bottom-3" fill="white" size={32} />
     </div>
     
