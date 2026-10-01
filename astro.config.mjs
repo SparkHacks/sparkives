@@ -9,4 +9,6 @@ export default defineConfig({
   },
 
   integrations: [react()],
+  site: 'https://sparkhacks.github.io',
+  base: '/sparkives',
 });
