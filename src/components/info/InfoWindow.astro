@@ -1,7 +1,7 @@
 ---
 // past years' overview archive
 import { icons } from "../../assets/svgBank"
-import { Medal, LayoutGrid, Paintbrush, Sparkles, HardDrive, MessageCircleHeart, FileText, ShieldUser, Camera, MousePointerClick, X } from "@lucide/astro";
+import { Medal, LayoutGrid, Paintbrush, Sparkles, HardDrive, MessageCircleHeart, FileText, ShieldUser, Camera, MousePointerClick, Images, X } from "@lucide/astro";
 import { Picture } from 'astro:assets';
 
 import {sh23Data} from "../../data/sh23Data.ts";
@@ -51,8 +51,21 @@ const { id, title = "Info Window", customWindow="" } = Astro.props;
 const yearData = teamDataMap[id || ""] || [];
 ---
 <div class="">
-  <!-- winners button -->
+  <!-- photo gallery button -->
   <div class="absolute">
+    <div class="flex flex-col gap-2 items-center">
+      <a href={yearData?.data.gallery} target="_blank" class="winner-btn group relative flex flex-col items-center justify-center">  
+        <Images color="black" size={64}
+        class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
+        />
+      </a>
+
+      Photo Gallery
+    </div>
+  </div>
+
+  <!-- winners button -->
+  <div class="absolute right-5 top-48">
     <div class="flex flex-col gap-2 items-center">
       <button
       data-open={yearData?.year ? `winners-${yearData.year}` : ""}
@@ -87,26 +100,26 @@ const yearData = teamDataMap[id || ""] || [];
   
 
   
-  <div class="select-none flex flex-col gap-5 justify-center items-center">
+  <div class="select-none flex flex-col gap-3 justify-center items-center">
     <div class="justify-center items-center text-center">
-      <h1 class="font-black font-sans text-3xl">{yearData?.data.name}</h1>
-      <h1 class="font-black font-sans text-xl">{yearData?.data.slogan}</h1>
+      <h1 class="font-black font-sans text-2xl">{yearData?.data.name}</h1>
+      <h1 class="font-black font-sans text-lg">{yearData?.data.slogan}</h1>
     </div>
     
-    <Picture src={yearData?.logo} alt={`${yearData?.data.name} Logo`} class="border-[4px] border-primary rounded-xl w-45 h-45 bg-[#FBEAB0] object-contain" />
+    <Picture src={yearData?.logo} alt={`${yearData?.data.name} Logo`} class="border-[4px] border-primary rounded-xl w-36 h-36 bg-[#FBEAB0] object-contain" />
 
     {/* info */}
     <div id="about" class="text-center">
       <p>Date: {yearData?.data.date ?? "TBD"}</p>
       <p>Participants: {yearData?.data.participants ?? 0}</p>
       <p>Projects Submitted: {yearData?.data.projects ?? 0}</p>
-      <p>Click to view the team members!</p>
+      <!-- <p>Click to view the team members!</p> -->
     </div>
     
     {/* teams */}
     <ul class="flex">
       <div class="w-full flex items-end justify-center gap-6 px-8" style="bottom: 15px;">
-        <div class="mx-22 flex flex-wrap gap-12 gap-y-4 justify-center items-center">
+        <div class="mx-22 flex flex-wrap gap-12 gap-y-3 justify-center items-center">
           {yearData?.team.map((team: TeamConfig) => (
             <button
                 data-open={team.id}
@@ -146,10 +159,16 @@ const yearData = teamDataMap[id || ""] || [];
       </div>
 
     </ul>
-    
-    <div class="transition hover:-translate-y-0.5 ">
-      <a href={yearData?.data.website} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer`}>Visit Site</a>
-      <MousePointerClick class="relative left-27 bottom-3" fill="white" size={32} />
+
+    <div class="flex gap-2">
+      <a href={yearData?.data.opening} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer transition hover:-translate-y-0.5`} style={{height:"fit-content"}}>Opening Ceremony</a>
+      
+      <div class="transition hover:-translate-y-0.5">
+        <a href={yearData?.data.website} target="_blank" class={`text-xl bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer`}>Visit Site</a>
+        <MousePointerClick class="relative left-27 bottom-3" fill="white" size={32} />
+      </div>
+      
+      <a href={yearData?.data.closing} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer transition hover:-translate-y-0.5`} style={{height:"fit-content"}}>Closing Ceremony</a>
     </div>
     
     <slot />

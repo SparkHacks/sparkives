@@ -38,7 +38,10 @@ export const sampleData = {
         "experience": [
             // add team members here
         ],
-        "outreach": [
+        "design": [
+            // add team members here
+        ],
+        "media": [
             // add team members here
         ],
         "webdev": [

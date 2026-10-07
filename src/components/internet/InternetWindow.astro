@@ -6,8 +6,6 @@ import FAQ from "./FAQ.astro";
 import Apply from "./Apply.astro";
 import Sagas from "./Sagas.astro";
 
-import { sparkSagas } from "../../data/sparkSagas"
-
 // for adding new tabs
 // this needs to be updated as well as the `names` array down in the <script> !
 const tabs = ["About", "FAQ", "Apply", "Sagas"];
@@ -55,7 +53,7 @@ const tabs = ["About", "FAQ", "Apply", "Sagas"];
 		<Apply />
 	</div>
 	<div id="internet-page-3" class="p-4 pb-0 content hidden">
-		<Sagas sagas={sparkSagas} />
+		<Sagas />
 	</div>
 </div>
 

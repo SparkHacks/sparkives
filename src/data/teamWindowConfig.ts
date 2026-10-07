@@ -40,4 +40,5 @@ export const teamWindowConfig = {
     { id: "win-2027-experience", label: "Experience", teamKey: "experience", title: "2027 Experience Team", x: 440, y: 460, width: "920px", color: "yellow" },
     { id: "win-2027-webdev", label: "Web Dev", teamKey: "webdev", title: "2027 Web Development Team", x: 480, y: 500, width: "980px", color: "purple" },
   ],
+  // add future years here!
 } as const;

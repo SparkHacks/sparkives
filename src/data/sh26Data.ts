@@ -5,9 +5,9 @@ export const sh26Data = {
     "participants": 300,
     "projects": 69,
     "website": "https://2026.sparkhacks.org/",
-    "opening": "",
-    "closing": "",
-    "gallery": "",
+    "opening": "slides/sh26-opening.pdf",
+    "closing": "slides/sh26-closing.pdf",
+    "gallery": "https://drive.google.com/drive/folders/1W7dt3S5yoEgPo84C1knJS5Xk9OzwzVFv?usp=sharing",
     "devpost": "https://sparkhacks-2026.devpost.com/project-gallery",
 
     "team": {

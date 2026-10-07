@@ -5,9 +5,9 @@ export const sh25Data = {
     "participants": 402,
     "projects": 81,
     "website": "https://2025.sparkhacks.org/",
-    "opening": "",
-    "closing": "",
-    "gallery": "",
+    "opening": "slides/sh25-opening.pdf",
+    "closing": "slides/sh25-closing.pdf",
+    "gallery": "https://drive.google.com/drive/folders/1lZg4EwnotB3NvUPsdYpGpkw9KEHDEitS?usp=drive_link",
     "devpost": "https://sparkhacks-2025.devpost.com/project-gallery",
 
     "team": {

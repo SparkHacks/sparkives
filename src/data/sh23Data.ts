@@ -5,8 +5,8 @@ export const sh23Data = {
     "participants": 176,
     "projects": 24,
     "website": "https://2023.sparkhacks.org/",
-    "opening": "",
-    "closing": "",
+    "opening": "slides/sh23-opening.pdf",
+    "closing": "slides/sh23-closing.pdf",
     "gallery": "",
     "devpost": "https://sparkhacks-at-uic.devpost.com/",
 
