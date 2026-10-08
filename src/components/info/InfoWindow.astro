@@ -52,17 +52,19 @@ const yearData = teamDataMap[id || ""] || [];
 ---
 <div class="">
   <!-- photo gallery button -->
-  <div class="absolute">
-    <div class="flex flex-col gap-2 items-center">
-      <a href={yearData?.data.gallery} target="_blank" class="winner-btn group relative flex flex-col items-center justify-center">  
-        <Images color="black" size={64}
-        class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
-        />
-      </a>
+  { yearData?.data.gallery &&
+    <div class="absolute">
+      <div class="flex flex-col gap-2 items-center">
+        <a href={yearData?.data.gallery} target="_blank" class="winner-btn group relative flex flex-col items-center justify-center">  
+          <Images color="black" size={64}
+          class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
+          />
+        </a>
 
-      Photo Gallery
+        Photo Gallery
+      </div>
     </div>
-  </div>
+  }
 
   <!-- winners button -->
   <div class="absolute right-5 top-48">
@@ -161,14 +163,18 @@ const yearData = teamDataMap[id || ""] || [];
     </ul>
 
     <div class="flex gap-8">
-      <a href={yearData?.data.opening} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer transition hover:-translate-y-0.5`} style={{height:"fit-content"}}>Opening Ceremony</a>
-      
+      { yearData?.data.opening &&
+        <a href={yearData?.data.opening} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer transition hover:-translate-y-0.5`} style={{height:"fit-content"}}>Opening Ceremony</a>
+      }
+
       <div class="transition hover:-translate-y-0.5">
         <a href={yearData?.data.website} target="_blank" class={`text-xl bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer`}>Visit Site</a>
         <MousePointerClick class="relative left-27 bottom-3" fill="white" size={32} />
       </div>
       
-      <a href={yearData?.data.closing} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer transition hover:-translate-y-0.5`} style={{height:"fit-content"}}>Closing Ceremony</a>
+      {  yearData?.data.closing &&
+        <a href={yearData?.data.closing} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer transition hover:-translate-y-0.5`} style={{height:"fit-content"}}>Closing Ceremony</a>
+      }
     </div>
     
     <slot />
