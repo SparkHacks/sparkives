@@ -3,10 +3,22 @@ import { Image } from "astro:assets";
 
 const sparkSagas = [
     {
+        "quote": "I spent more time on sparkhacks than I did on my tech electives in 2024 and I have no regrets. Being a part of the team taught me lessons and skills I'd have never found in a classroom. It's my most cherished memories at uic and a legacy I will carry with me forever. was I drunk with power? probably (not)",
+        "image": "sh-24/naan.webp",
+        "person": "Nandana Sheri",
+        "role": "Director 2024"
+    },
+    {
         "quote": "It was so fun being a part of the board and seeing all our designs come to life at the hackathon!! I loved being able to get creative with all of the designs from the merch to the insta posts. My fav moment was the board photoshoot we organized together!",
         "image": "sh-26/huda.webp",
         "person": "Huda Syed",
         "role": "Outreach 2026"
+    },
+    {
+        "quote": "i was on the board for 3 years. was that longer than anyone should? definitely. would i do it again, probably. Sparkhacks was such a fun, loving community that really rounded my college experience",
+        "image": "sh-26/kaustubha.webp",
+        "person": "Kaustubha Medikundam",
+        "role": "Communications 2026"
     },
     {
         "quote": "goated",
@@ -46,7 +58,7 @@ const photoMap = {
                             width={200}
                             height={200}
                             loading="lazy"
-                            class="border-black border-2 transition-all duration-200 ease-out hover:scale-110"
+                            class="saga-image border-black border-2 transition-all duration-200 ease-out hover:scale-110"
                             // style="width: 100%; height: 100%"
                         />
                     </div>
@@ -62,3 +74,9 @@ const photoMap = {
         ))}
     </div>
 </div>
+
+<style>
+    .saga-image {
+        object-fit: cover;
+    }
+</style>
