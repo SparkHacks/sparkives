@@ -1,5 +1,8 @@
 ---
-import { Image } from "astro:assets";
+import { Image, Picture } from "astro:assets";
+import gathers24 from "../../assets/imgs/sh24_gathers.webp"
+import panIQ26 from "../../assets/imgs/sh26_paniq.webp"
+import sparkyImage from "../../assets/easter-eggs/sparky.webp";
 
 const sparkSagas = [
     {
@@ -47,7 +50,7 @@ const photoMap = {
 <div class="flex flex-col gap-4" style="text-wrap: pretty; " style="scrollbar-color: gray #ffffff00;">
     <h2 class="font-sans text-3xl font-black">SAGAS FROM THE SPARKHACKS BOARD</h2>
 
-    <div class="h-[350px] overflow-y-scroll flex flex-col gap-6 py-4 justify-around" style="scrollbar-color: gray #ffffff00;">
+    <div class="h-[400px] overflow-y-scroll flex flex-col gap-6 py-4 justify-around" style="scrollbar-color: gray #ffffff00;">
         { Array.from(sparkSagas).map((item, i) => (
             <div class="flex flex-row bg-cyan-100 border-black border-2 gap-3 p-4">
                 <div class="flex flex-col text-center w-24">
@@ -72,6 +75,25 @@ const photoMap = {
                 </div>
             </div>
         ))}
+
+        <!-- pictures -->
+        <hr class="mt-4" />
+        <p class="text-2xl font-extrabold">Memories 💖</p>
+        
+        <div class="text-right">
+            <Picture src={panIQ26} alt="Escaping PanIQ with 2026 E-Board!" class="border-[4px] border-primary rounded-xl" />
+            <p>Escaping PanIQ with 2026 E-Board!</p>
+        </div>
+        
+        <div class="text-right">
+            <Picture src={gathers24} alt="Enjoying some Gathers with 2024 E-Board!" class="border-[4px] border-primary rounded-xl" />
+            <p>Enjoying some Gathers with 2024 E-Board!</p>
+        </div>
+
+        <div class="text-right">
+            <Picture src={sparkyImage} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
+            <p>Honorary Sparky mention!</p>
+        </div>
     </div>
 </div>
 

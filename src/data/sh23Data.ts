@@ -7,7 +7,7 @@ export const sh23Data = {
     "website": "https://2023.sparkhacks.org/",
     "opening": "slides/sh23-opening.pdf",
     "closing": "slides/sh23-closing.pdf",
-    "gallery": "",
+    "gallery": "https://drive.google.com/drive/folders/1grJ5RWtXrYdvXKulUejqjT19j53Yxv_f?usp=drive_link",
     "devpost": "https://sparkhacks-at-uic.devpost.com/",
 
     // 2023 did not have super defined teams and roles! 

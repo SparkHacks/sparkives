@@ -28,6 +28,7 @@
 2. Add in the basic information and statistics about the year. 
     * This information should be added after the event has already passed, one, to prevent spoilers, and two, to have accurate numbers.
     * The opening and closing slides should be imported as `.pdf` inside of the `public/slides` directory! When adding this information to the `.ts` file, use the path `slides/sh[year]-[opening/closing].pdf`.
+    * Winners information should contain the authors, the link to the DevPost submission, and the description pulled from the DevPost submission. The description is primarily from the one-liner in the submission, but the ones that were too short were also combined with parts of the "What it does" section.
 3. Add in information about the board. 
     * When inputting the photo path, use format `sh-[year]/[person].webp`.
     * For anyone who doesn't have a haedshot, use the image located at `src/assets/easter-eggs/anonymous.webp`.

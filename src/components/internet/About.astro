@@ -2,22 +2,30 @@
 import { Heart } from "@lucide/astro"
 import { Picture } from 'astro:assets';
 import sparkyImage from "../../assets/easter-eggs/sparky.webp";
+import board23 from "../../assets/imgs/sh23.webp"
+import board24 from "../../assets/imgs/sh24.webp"
+import board25 from "../../assets/imgs/sh25.webp"
+import board26 from "../../assets/imgs/sh26.webp"
+import ceremony26 from "../../assets/imgs/sh26_ceremony.webp"
+import ceremony25 from "../../assets/imgs/sh25_ceremony.webp"
+import ceremony23 from "../../assets/imgs/sh23_ceremony.webp"
+import directors26 from "../../assets/imgs/sh25_directors.webp"
 ---
 
 <div class="flex flex-col gap-4" style="text-wrap: pretty;">
     <h2 class="font-sans text-3xl font-black">WHAT IS SPARKHACKS?</h2>
 
-    <div class="flex flex-col gap-8 h-[350px] overflow-y-scroll" style="scrollbar-color: gray #ffffff00;">
+    <div class="flex flex-col gap-8 h-[400px] overflow-y-scroll" style="scrollbar-color: gray #ffffff00;">
         <section class="flex flex-row justify-center align-center items-center gap-8">
             
             <p>
                 <span class="font-bold">SparkHacks</span> is the University of Illinois Chicago's 24-hour hackathon where students create technology based projects. Starting in 2023, SparkHacks has become one of UIC's most active student-led tech experiences.
             </p>
-            <Picture src={sparkyImage} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
+            <Picture src={ceremony23} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
         </section>
 
         <section class="flex flex-row justify-center align-center items-center gap-8 pb-4">
-            <Picture src={sparkyImage} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
+            <Picture src={board23} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
             <p>
                 SparkHacks was initially started by <span class="font-bold">Women in Computer Science (WiCS)</span> at UIC in 2022. 
             </p>
@@ -45,11 +53,14 @@ import sparkyImage from "../../assets/easter-eggs/sparky.webp";
                 Since then SparkHacks' purpose has been to <span class="font-bold">promote diversity, creativity, and innovation</span>.
             </p>
             
-            <Picture src={sparkyImage} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
+            <Picture src={board25} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
             
             <p>
                 <span class="font-bold">Fun Facts!</span> SparkHacks was originally hosted in Student Center East (SCE) for the 2023-2024 iterations. It moved to the Academic & Residential Complex (ARC) in 2025, and finally in the Computer Design Research and Learning Center (CDRLC) in 2026! 
             </p>
+
+            <Picture src={ceremony25} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
+            <Picture src={ceremony26} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
         </section>
     </div>
 </div>
