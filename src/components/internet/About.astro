@@ -3,13 +3,11 @@ import { Heart } from "@lucide/astro"
 import { Picture } from 'astro:assets';
 import sparkyImage from "../../assets/easter-eggs/sparky.webp";
 import board23 from "../../assets/imgs/sh23.webp"
-import board24 from "../../assets/imgs/sh24.webp"
-import board25 from "../../assets/imgs/sh25.webp"
-import board26 from "../../assets/imgs/sh26.webp"
 import ceremony26 from "../../assets/imgs/sh26_ceremony.webp"
 import ceremony25 from "../../assets/imgs/sh25_ceremony.webp"
 import ceremony23 from "../../assets/imgs/sh23_ceremony.webp"
-import directors26 from "../../assets/imgs/sh25_directors.webp"
+import director23 from "../../assets/imgs/sh23_red_blue.webp"
+import directors26 from "../../assets/imgs/sh26_directors.webp"
 ---
 
 <div class="flex flex-col gap-4" style="text-wrap: pretty;">
@@ -41,8 +39,8 @@ import directors26 from "../../assets/imgs/sh25_directors.webp"
         </section>
 
         <section class="flex flex-row justify-center align-center items-center gap-8 pb-4">            
-            <Picture src={sparkyImage} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
-            <Picture src={sparkyImage} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
+            <Picture src={director23} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
+            <Picture src={directors26} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
         </section>
 
         <section class="flex flex-col justify-center align-center items-center gap-8 pb-4">
@@ -53,14 +51,13 @@ import directors26 from "../../assets/imgs/sh25_directors.webp"
                 Since then SparkHacks' purpose has been to <span class="font-bold">promote diversity, creativity, and innovation</span>.
             </p>
             
-            <Picture src={board25} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
+            <Picture src={ceremony26} alt="SparkHacks 2026 Closing Ceremony." class="border-[4px] border-primary rounded-xl" />
             
             <p>
                 <span class="font-bold">Fun Facts!</span> SparkHacks was originally hosted in Student Center East (SCE) for the 2023-2024 iterations. It moved to the Academic & Residential Complex (ARC) in 2025, and finally in the Computer Design Research and Learning Center (CDRLC) in 2026! 
             </p>
 
-            <Picture src={ceremony25} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
-            <Picture src={ceremony26} alt="Sparky the Dragon." class="border-[4px] border-primary rounded-xl" />
+            <Picture src={ceremony25} alt="SparkHacks 2025 Closing Ceremony." class="border-[4px] border-primary rounded-xl" />
         </section>
     </div>
 </div>

@@ -1,0 +1,36 @@
+---
+import { Picture } from "astro:assets";
+
+import sparkyImage from "../../assets/easter-eggs/sparky.webp";
+import board23 from "../../assets/imgs/sh23.webp"
+import board24 from "../../assets/imgs/sh24.webp"
+import board25 from "../../assets/imgs/sh25.webp"
+import board26 from "../../assets/imgs/sh26_oldtime.webp"
+---
+
+<div class="flex flex-col gap-4" style="text-wrap: pretty;">
+    <h2 class="font-sans text-3xl font-black">EXECUTIVE BOARDS</h2>
+
+    <div class="flex flex-col gap-8 h-[400px] overflow-y-scroll" style="scrollbar-color: gray #ffffff00;">
+        <div class="text-right">
+            <Picture src={board26} alt="Escaping PanIQ with 2026 E-Board!" class="border-[4px] border-primary rounded-xl" />
+            <p>2026 Exec-Board</p>
+        </div>
+        
+        <div class="text-right">
+            <Picture src={board25} alt="Escaping PanIQ with 2026 E-Board!" class="border-[4px] border-primary rounded-xl" />
+            <p>2025 Exec-Board</p>
+        </div>
+        
+        <div class="text-right">
+            <Picture src={board24} alt="Escaping PanIQ with 2026 E-Board!" class="border-[4px] border-primary rounded-xl" />
+            <p>2024 Exec-Board</p>
+        </div>
+        
+        <div class="text-right">
+            <Picture src={board23} alt="Escaping PanIQ with 2026 E-Board!" class="border-[4px] border-primary rounded-xl" />
+            <p>2023 Exec-Board</p>
+        </div>
+        
+    </div>
+</div>

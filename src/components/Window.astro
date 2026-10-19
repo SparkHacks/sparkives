@@ -61,7 +61,7 @@ const gradientClasses = headerColorMap[headerColor] ?? headerColorMap.sky;
   <!-- make blank for custom windows -->
   {
     customWindow !== "" &&
-    <div class="">
+    <div class="window-titlebar">
       <slot />
     </div>
   }
@@ -74,6 +74,15 @@ const gradientClasses = headerColorMap[headerColor] ?? headerColorMap.sky;
   const REF_H = 900;
 
   function scaleAndPlace(win: HTMLElement) {
+    var res = false;
+    // rescale width
+    if (win.offsetWidth > window.innerWidth)
+    {  
+      win.style.width  = `${window.innerWidth}px`;
+      res = true;
+    }
+
+    // placement
     const rx = Number(win.dataset.initialX ?? 100);
     const ry = Number(win.dataset.initialY ?? 100);
     const sx = (rx / REF_W) * window.innerWidth;
@@ -82,6 +91,9 @@ const gradientClasses = headerColorMap[headerColor] ?? headerColorMap.sky;
     const maxY = window.innerHeight - win.offsetHeight;
     win.style.left = `${Math.min(Math.max(0, sx), maxX)}px`;
     win.style.top  = `${Math.min(Math.max(0, sy), maxY)}px`;
+
+    if (res) // move up window slightly so it doesnt get covered by dock
+      win.style.top=`${Math.min(maxY/2, sy)}px`;
   }
 
   let globalZ = Math.max(

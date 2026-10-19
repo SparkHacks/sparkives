@@ -14,3 +14,14 @@ npm install
 ```bash
 npm run dev
 ```
+
+## Contributors
+
+SparkHacks 2026 Web Development Team:
+
+- [Josephine Lee](https://github.com/abyssaldragonz)
+- [Dominic Irla](https://github.com/Ddomir)
+- [Nathan Trinh](https://github.com/nathantkn)
+- [Flori Che](https://github.com/cheetodustflori)
+- [Daniel Barajas](https://github.com/danbarajas)
+- [Fatima Rasheed](https://github.com/fzrasheed)

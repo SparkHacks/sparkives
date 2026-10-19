@@ -53,10 +53,10 @@ const yearData = teamDataMap[id || ""] || [];
   <!-- photo gallery button -->
   { yearData?.data.gallery &&
     <div class="absolute">
-      <div class="flex flex-col gap-2 items-center">
+      <div class="flex flex-col gap-2 items-center text-wrap w-16 text-center">
         <a href={yearData?.data.gallery} target="_blank" class="winner-btn group relative flex flex-col items-center justify-center">  
-          <Images color="black" size={64}
-          class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
+          <Images color="black"
+          class="size-16 cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
           />
         </a>
 
@@ -73,8 +73,8 @@ const yearData = teamDataMap[id || ""] || [];
       class="winner-btn group relative flex flex-col items-center justify-center"
       title="Winners"
       >
-        <Medal color="black" fill="#FFEAA2" size={64}
-          class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
+        <Medal color="black" fill="#FFEAA2" 
+          class="size-16 cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
         />
       </button>
 
@@ -90,8 +90,8 @@ const yearData = teamDataMap[id || ""] || [];
       class="winner-btn group relative flex flex-col items-center justify-center"
       title="Projects"
       >
-        <LayoutGrid color="black" fill="#38cbe8" size={64}
-          class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
+        <LayoutGrid color="black" fill="#38cbe8"
+          class="size-16 cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
         />
       </a>
 
@@ -120,7 +120,7 @@ const yearData = teamDataMap[id || ""] || [];
     {/* teams */}
     <ul class="flex">
       <div class="w-full flex items-end justify-center gap-6 px-8" style="bottom: 15px;">
-        <div class="mx-22 flex flex-wrap gap-12 gap-y-3 justify-center items-center">
+        <div class="mx-8 lg:mx-22 flex flex-wrap gap-4 lg:gap-12 lg:gap-y-3 justify-center items-center">
           {yearData?.team.map((team: TeamConfig) => (
             <button
                 data-open={team.id}
@@ -142,14 +142,14 @@ const yearData = teamDataMap[id || ""] || [];
 
               {/* use a specific icon component for each team */}
               <div class="cursor-pointer dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2">
-                {team.teamKey === "directors" &&      <ShieldUser         color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
-                {team.teamKey === "communications" && <MessageCircleHeart color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
-                {team.teamKey === "logistics" &&      <FileText           color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
-                {team.teamKey === "experience" &&     <Sparkles           color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
-                {team.teamKey === "outreach" &&       <Paintbrush         color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
-                {team.teamKey === "design" &&         <Paintbrush         color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
-                {team.teamKey === "media" &&          <Camera             color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
-                {team.teamKey === "webdev" &&         <HardDrive          color="black" fill={`url(#${team.color}-gradient)`} size={64} />}
+                {team.teamKey === "directors" &&      <ShieldUser         color="black" fill={`url(#${team.color}-gradient)`} class="size-16" />}
+                {team.teamKey === "communications" && <MessageCircleHeart color="black" fill={`url(#${team.color}-gradient)`} class="size-16" />}
+                {team.teamKey === "logistics" &&      <FileText           color="black" fill={`url(#${team.color}-gradient)`} class="size-16" />}
+                {team.teamKey === "experience" &&     <Sparkles           color="black" fill={`url(#${team.color}-gradient)`} class="size-16" />}
+                {team.teamKey === "outreach" &&       <Paintbrush         color="black" fill={`url(#${team.color}-gradient)`} class="size-16" />}
+                {team.teamKey === "design" &&         <Paintbrush         color="black" fill={`url(#${team.color}-gradient)`} class="size-16" />}
+                {team.teamKey === "media" &&          <Camera             color="black" fill={`url(#${team.color}-gradient)`} class="size-16" />}
+                {team.teamKey === "webdev" &&         <HardDrive          color="black" fill={`url(#${team.color}-gradient)`} class="size-16" />}
               </div>
 
               {team.label}
@@ -163,16 +163,16 @@ const yearData = teamDataMap[id || ""] || [];
 
     <div class="flex gap-8">
       { yearData?.data.opening &&
-        <a href={yearData?.data.opening} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer transition hover:-translate-y-0.5`} style={{height:"fit-content"}}>Opening Ceremony</a>
+        <a href={yearData?.data.opening} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer transition hover:-translate-y-0.5 text-center`} style={{height:"fit-content"}}>Opening Ceremony</a>
       }
 
-      <div class="transition hover:-translate-y-0.5">
-        <a href={yearData?.data.website} target="_blank" class={`text-xl bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer`}>Visit Site</a>
-        <MousePointerClick class="relative left-27 bottom-3" fill="white" size={32} />
+      <div class="block transition hover:-translate-y-0.5 text-wrap">
+        <a href={yearData?.data.website} target="_blank" class={`block text-xl bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer text-wrap text-center`}>Visit Site</a>
+        <MousePointerClick class="relative left-16 bottom-6 lg:left-27 lg:bottom-3" fill="white" size={32} />
       </div>
       
       {  yearData?.data.closing &&
-        <a href={yearData?.data.closing} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer transition hover:-translate-y-0.5`} style={{height:"fit-content"}}>Closing Ceremony</a>
+        <a href={yearData?.data.closing} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer transition hover:-translate-y-0.5 text-center`} style={{height:"fit-content"}}>Closing Ceremony</a>
       }
     </div>
     

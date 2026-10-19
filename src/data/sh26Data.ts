@@ -199,7 +199,7 @@ export const sh26Data = {
                 {
                     "title": "Workaholic",
                     "placement": "1st Place",
-                    "authors": "Jeonghwan Park, Antonio Unabia, Disguised Coffee, Emilio Calvo, Steve Nuevaorlanda",
+                    "authors": "Jeonghwan Park, Antonio Unabia, Dan Danque, Emilio Calvo, Steve Nuevaorlanda",
                     "description": "Workaholic is a short narrative game where a computer science intern races to finish a project on the day of the deadline. You must balance productivity with breaks in a stressful office environment.",
                     "link": "https://devpost.com/software/workaholic-30h7g9"
                 },
@@ -254,7 +254,7 @@ export const sh26Data = {
                     "title": "Earth Restoration Command Center",
                     "placement": "1st Place",
                     "authors": "JoAnn Johnson, Reava Kakadiya, Sameena Vasi",
-                    "description": "Our project turns Wall-E’s world into a functional interface. The site explains their roles through visual storytelling and simplified POV dashboards show how they decide to detect and collect waste.",
+                    "description": "Our project turns Wall-E's world into a functional interface. The site explains their roles through visual storytelling and simplified POV dashboards show how they decide to detect and collect waste.",
                     "link": "https://devpost.com/software/earth-restoration-command-center"
                 },
             ]

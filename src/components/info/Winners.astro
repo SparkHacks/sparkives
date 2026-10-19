@@ -26,18 +26,18 @@ const dataMap: Record<string, any> = {
 
 const winnersData = dataMap[year?.toString() || ""] || [];
 
-const tabs = Array.from({length: winnersData.length}, (_, ind) => "Track " + (ind+1));
+const tabs = Array.from({length: winnersData.length}, (_, ind) => "Track ");
 ---
 <div class="flex bg-[#121B26] border-black border-3 h-125">
     <!-- icons column -->
     <div class="flex flex-col bg-linear-0 from-[#59595C] to-[#383C40] w-12 items-center p-2 gap-4">
-        <Files size={35} color="#D5D5D5" />
-        <Search size={35} color="#D5D5D5" />
-        <Blocks size={35} color="#D5D5D5" />
-        <BugPlay size={35} color="#D5D5D5" />
-        <GitBranch size={35} color="#D5D5D5" />
+        <Files      class="size-7" color="#D5D5D5" />
+        <Search     class="size-7" color="#D5D5D5" />
+        <Blocks     class="size-7" color="#D5D5D5" />
+        <BugPlay    class="size-7" color="#D5D5D5" />
+        <GitBranch  class="size-7" color="#D5D5D5" />
         <div class="flex-grow"/>
-        <Settings size={35} color="#D5D5D5" />
+        <Settings class="size-7" color="#D5D5D5" />
     </div>
     <div class="border-black border-3"></div>
 
@@ -48,7 +48,7 @@ const tabs = Array.from({length: winnersData.length}, (_, ind) => "Track " + (in
 			{Array.from(tabs).map((tab, i) => (
 				<div id={`winners-tab-${year}-${i}`} class={`items-center winners-tab-${year} cursor-pointer flex bg-[#0F1114] border-white border px-2 py-1`}>
 					<Trophy color="white" size={20} />
-                    <p class="text-white px-1"> {tab}</p>				
+                    <p class="text-white px-1 text-sm lg:text-lg text-nowrap whitespace-nowrap"> <span class="hidden lg:block text-nowrap whitespace-nowrap lg:inline">{tab}</span>{i+1}</p>				
 				</div>
 			))}
 

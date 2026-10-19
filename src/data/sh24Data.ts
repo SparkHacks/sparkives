@@ -1,6 +1,6 @@
 export const sh24Data = {
     "name": "SparkHacks 2024",
-    "slogan": "",
+    "slogan": "AstroCode Fest",
     "date": "02/09/2024 - 02/10/2024",
     "participants": 251,
     "projects": 47,
@@ -203,7 +203,7 @@ export const sh24Data = {
                 {
                     "title": "zZz - Sleep Tracker",
                     "placement": "2nd Place",
-                    "authors": "Trinh Phan, Uyen Duong, Thi Tran, Mightymanh Phan, Trong Gia Hung Nguyen ",
+                    "authors": "Trinh Phan, Uyen Duong, Thi Tran, Mightymanh Phan, Trong Gia Hung Nguyen",
                     "description": "As students, we recognize the challenges of obtaining sufficient quality sleep amidst our demanding schedules and deadlines. This struggle is not unique to us; it extends to anyone facing similar constraints. With the aspiration to enhance well-being and contribute to a more balanced day, we are excited to introduce our project: zZz - Sleep Tracker.",
                     "link": "https://devpost.com/software/zzz-sleep-tracker"
                 },
@@ -223,7 +223,7 @@ export const sh24Data = {
                 {
                     "title": "Gather",
                     "placement": "2nd Place",
-                    "authors": "Seyfal Sultanov, Dylen Greenenwald, Radison Akerman ",
+                    "authors": "Seyfal Sultanov, Dylen Greenenwald, Radison Akerman",
                     "description": "Life gets busy. Making time and decisions to recreate is not a trivial task for a variety of reasons. Most of us have busy schedules and exhausting occupations. Who has time or energy to plan and organize events -- and do so without creating conflicts?",
                     "link": "https://devpost.com/software/gather-z15uxj"
                 },
@@ -277,7 +277,7 @@ export const sh24Data = {
                     "title": "PandaPals",
                     "placement": "1st Place",
                     "authors": "Rasleen Dhaliwal, Anagha Karnik, Thuy Duong Pham, Eman Arsham, Isabella Chen",
-                    "description": "Panda Pal is here to help you complete goals that will increase your PandaPal’s happiness. Keep your PandaPal happy, and you too will feel the happiness from within.",
+                    "description": "Panda Pal is here to help you complete goals that will increase your PandaPal's happiness. Keep your PandaPal happy, and you too will feel the happiness from within.",
                     "link": "https://devpost.com/software/pandapals"
                 },
             ]

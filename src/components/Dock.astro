@@ -15,10 +15,10 @@ interface Props {
 const { items } = Astro.props
 ---
 
-<div class="fixed bottom-5 left-1/2 -translate-x-1/2 z-5000 select-none" style="width:520px;">
+<div class="fixed bottom-5 left-1/2 -translate-x-1/2 z-5000 select-none w-96 lg:w-128">
   <div class="absolute bottom-0 left-0 w-full pointer-events-none [&>svg]:w-full [&>svg]:h-auto" set:html={icons.dockPad} />
 
-  <div class="absolute left-0 w-full flex items-end justify-center gap-6 px-8" style="bottom: 15px;">
+  <div class="absolute left-0 w-full flex items-end justify-center gap-0 lg:gap-6 px-8 pb-1" style="bottom: 15px;">
     {items.map((item) => (
       <button
         data-open={item.id ?? ""}
@@ -29,7 +29,7 @@ const { items } = Astro.props
           {item.label}
         </span>
         <span
-          class="dock-icon transition-all duration-200 ease-out group-hover:scale-110 group-hover:-translate-y-2"
+          class="dock-icon transition-all duration-200 ease-out scale-80 lg:scale-100 group-hover:scale-110 group-hover:-translate-y-2"
           style="filter: drop-shadow(2px 4px 0px black)"
           set:html={icons[item.icon]}
         />

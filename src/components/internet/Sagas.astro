@@ -1,6 +1,8 @@
 ---
 import { Image, Picture } from "astro:assets";
 import gathers24 from "../../assets/imgs/sh24_gathers.webp"
+import selfie25 from "../../assets/imgs/sh25_selfie.webp"
+import polaroid25 from "../../assets/imgs/sh25_polaroid.webp"
 import panIQ26 from "../../assets/imgs/sh26_paniq.webp"
 import sparkyImage from "../../assets/easter-eggs/sparky.webp";
 
@@ -83,6 +85,16 @@ const photoMap = {
         <div class="text-right">
             <Picture src={panIQ26} alt="Escaping PanIQ with 2026 E-Board!" class="border-[4px] border-primary rounded-xl" />
             <p>Escaping PanIQ with 2026 E-Board!</p>
+        </div>
+
+        <div class="text-right">
+            <div class="flex gap-2">
+                <Picture src={polaroid25} alt="Selfies with 2025 E-Board!" class="border-[4px] border-primary rounded-xl" />
+                <div class="flex flex-col">
+                    <Picture src={selfie25} alt="Selfies with 2025 E-Board!" class="border-[4px] border-primary rounded-xl" />
+                    <p>Selfies with 2025 E-Board!</p>
+                </div>
+            </div>
         </div>
         
         <div class="text-right">
