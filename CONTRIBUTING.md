@@ -7,7 +7,37 @@
 > Any changes made to `main` will **automatically** be deployed! 
 
 ## File Structure
-> yay
+> These are the main directories under this repository where contributions are likely to be made. 
+
+The file structure is pretty simple as it follows the default file structure made by Astro. 
+
+
+```
+/
+├── .github/                # Github workflow actions for CI/CD
+├── public/
+│   └── slides/                 # Add opening and closing ceremony slides here
+│   └── .../                    
+├── src/                    # Core source files
+│   └── assets/                 # Holds any important assets
+│       └── easter-eggs/            # Easter eggs
+│       └── fonts/                  # Fonts 
+│       └── imgs/                   # Unorganized images for site-wide use
+│       └── logos/                  # Yearly logos for SparkHacks
+│       └── svgBank.ts              # File containing SVG paths for icons
+│       └── .../                    # Add directories for board headshots and photos 
+│   └── components/             # Holds core components
+│       └── info/                   # Components meant for the info window
+│       └── internet/               # Components meant for the internet window
+│       └── .../                    # Add additional components and directories
+│   └── data/                   # Holds core yearly data gor SparkHacks 
+│       └── sampleData.ts           # Sample data file and structure 
+│       └── .../                    # Add any additional year information here
+│   └── .../                    # Additional Astro files
+├── CONTRIBUTING.md         # Extended documentation on contributing
+├── README.md               # Main project overview
+├── ...
+```
 
 ## Adding Data
 > Please refer to previous year files to see how everything is organized! 
@@ -26,7 +56,7 @@
 1. Under `src/data`, make a copy of the `sampleData.ts` file and rename it to `sh[year]Data.ts`.
     * Make sure to rename the map that gets exported to `sh[year]Data`.
 2. Add in the basic information and statistics about the year. 
-    * This information should be added after the event has already passed, one, to prevent spoilers, and two, to have accurate numbers.
+    * This information should be added after the event has already passed, one, to prevent spoilers (unless you want to tease it), and two, to have accurate numbers.
     * The opening and closing slides should be imported as `.pdf` inside of the `public/slides` directory! When adding this information to the `.ts` file, use the path `slides/sh[year]-[opening/closing].pdf`.
     * Winners information should contain the authors, the link to the DevPost submission, and the description pulled from the DevPost submission. The description is primarily from the one-liner in the submission, but the ones that were too short were also combined with parts of the "What it does" section.
 3. Add in information about the board. 
@@ -61,11 +91,19 @@ All of the information for Sagas is stored within `src/components/internet/Sagas
 Simple add a new entry to `sparkSagas` list with the quote, the person, their headshot, and their role.
 * For the role, I did their most recent role. 
 
+The other section, `src/components/internet/Boards.astro`, primarily contain a full board photo for each year, the one taken during the actual event with our sweatshirts.
+Feel free to add in the fun board hangout/social photos into the Sagas section! 
+
 <!-- it will be a mess -->
 ### New Teams 
-> I do not anticipate new teams to be formed, but by the off-chance that new teams need to be added, there is a lot more that needs to be done. 
+> I do not anticipate new teams to be formed, but by the off-chance that new teams need to be added, there is a few more things that needs to be done. 
 
-1. 
+1. In the corresponding year data file under `src/data`, add a new element to the `team` object property, following the format of the other teams.
+
+2. In the `src/components/data/teamWindowConfig.ts`, under the year you want to add a new team for, make sure you add the correct element `id` and the `teamkey` for that new team.
+3. In `src/components/info/InfoWindow.astro`, import the Lucide icon that will be used for this new team.
+4. In `src/components/info/InfoWindow.astro`, a comment  `{/* add new teams here! */}` has been left. Add a new condition to check for the new teamkey and the icon that needs to be displayed for that team.
+5. 
 
 
 

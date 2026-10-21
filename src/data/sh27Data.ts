@@ -17,7 +17,7 @@ export const sh27Data = {
                 "name": "Mehtab Kaur",
                 "role": "Director",
                 "photo": "easter-eggs/anonymous.webp",
-                "linkedin": "",
+                "linkedin": "https://www.linkedin.com/in/mehtabkaurr/",
             },
             {
                 "name": "Zeel Patel",
@@ -51,13 +51,13 @@ export const sh27Data = {
                 "name": "Sena Ozcan",
                 "role": "Logistics",
                 "photo": "easter-eggs/anonymous.webp",
-                "linkedin": "",
+                "linkedin": "https://www.linkedin.com/in/sena-ozcan/",
             },
             {
                 "name": "Antonio Unabia",
                 "role": "Logistics",
                 "photo": "easter-eggs/anonymous.webp",
-                "linkedin": "",
+                "linkedin": "www.linkedin.com/in/antonio-unabia/",
             },
             {
                 "name": "Karen Mai",
@@ -144,19 +144,19 @@ export const sh27Data = {
                 "name": "Dominic Irla",
                 "role": "Web Development Lead",
                 "photo": "easter-eggs/anonymous.webp",
-                "linkedin": "",
+                "linkedin": "https://www.linkedin.com/in/dominic-irla/",
             },
             {
                 "name": "Josephine Lee",
                 "role": "Web Development Lead",
                 "photo": "easter-eggs/anonymous.webp",
-                "linkedin": "",
+                "linkedin": "https://www.linkedin.com/in/josephine-b-l/",
             },
             {
                 "name": "Fatima Rasheed",
                 "role": "Web Development",
                 "photo": "easter-eggs/anonymous.webp",
-                "linkedin": "",
+                "linkedin": "https://www.linkedin.com/in/fatima-rasheed-/",
             },
             {
                 "name": "Kahnishga Solaidurairaj",
