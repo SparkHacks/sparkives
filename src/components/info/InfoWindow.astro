@@ -107,7 +107,7 @@ const yearData = teamDataMap[id || ""] || [];
       <h1 class="font-black font-sans text-lg">{yearData?.data.slogan}</h1>
     </div>
     
-    <Picture src={yearData?.logo} alt={`${yearData?.data.name} Logo`} class="border-[4px] border-primary rounded-xl w-36 h-36 bg-[#FBEAB0] object-contain" />
+    <Picture src={yearData?.logo} alt={`${yearData?.data.name} Logo`} class="border-4 border-primary rounded-xl w-36 h-36 bg-window-bg object-contain" />
 
     {/* info */}
     <div id="about" class="text-center">
@@ -120,7 +120,7 @@ const yearData = teamDataMap[id || ""] || [];
     {/* teams */}
     <ul class="flex">
       <div class="w-full flex items-end justify-center gap-6 px-8" style="bottom: 15px;">
-        <div class="mx-8 lg:mx-22 flex flex-wrap gap-6 lg:gap-12 lg:gap-y-3 justify-evenly lg:justify-center items-center">
+        <div class="mx-8 lg:mx-22 flex flex-wrap gap-4 lg:gap-12 lg:gap-y-3 justify-evenly lg:justify-center items-center">
           {yearData?.team.map((team: TeamConfig) => (
             <button
                 data-open={team.id}
@@ -162,7 +162,7 @@ const yearData = teamDataMap[id || ""] || [];
 
     </ul>
 
-    <div class="flex gap-8 text-sm lg:text-lg">
+    <div class="flex gap-4 text-sm lg:text-lg">
       { yearData?.data.opening &&
         <a href={yearData?.data.opening} target="_blank" class={`bg-linear-0 ${yearData?.color} rounded-2xl py-1 px-5 border-3 relative cursor-pointer transition hover:-translate-y-0.5 text-center`} style={{height:"fit-content"}}>Opening Ceremony</a>
       }
