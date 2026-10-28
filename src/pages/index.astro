@@ -36,7 +36,7 @@ const numRows = 6;
 const iconsPerRow = 20;
 ---
 <Layout title="Sparkives">
-	<img id="sparkives_logo" class="absolute top-0 lg:top-4 right-0 scale-75 lg:scale-100 lg:left-4 hover:rotate-15 hover:scale-115" src="/sparkives.svg" alt="Sparklet!" width="64" height="64" />
+	<img id="sparkives_logo" class="absolute top-0 md:top-4 lg:top-4 right-0 scale-75 lg:scale-100 md:left-4 lg:left-4 hover:scale-115" src="/sparkives.svg" alt="Sparklet!" width="64" height="64" />
 
 	<div class="select-none flex flex-col items-end">
 		<h1 class="font-sans text-6xl font-black">SparkHacks Archive</h1>
@@ -220,5 +220,25 @@ const iconsPerRow = 20;
 	.hidden {
 		display: none;
 	}
+
+
+	@keyframes bob {
+		0%		{	translate: 0 0		}
+		20% 	{	translate: 0 -8px	}
+		55% 	{	translate: 0 5px	}
+		80% 	{	translate: 0 -1px	}
+		100% 	{	translate: 0 0		}
+	}
+	
+	@keyframes sway {
+		0%		{	rotate: 0deg;	}
+		33%		{	rotate: 5deg;	}
+		70%		{	rotate: -5deg;	}
+	}
+	
+	#sparkives_logo {
+		animation: bob 15s ease-out infinite, sway 7s ease-in-out 1s infinite;	
+	}
+
 
 </style>
