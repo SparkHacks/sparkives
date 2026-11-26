@@ -18,7 +18,7 @@ const tabs = ["About", "FAQ", "Apply", "Sagas", "Boards"];
 		<div class="flex flex-row items-center justify-center gap-2 text-sm lg:text-lg">
 			<ChevronLeft stroke-width="4px" id="prev-arrow" class="cursor-pointer" />
 			<ChevronRight stroke-width="4px" id="next-arrow" class="cursor-pointer" />
-			<div class="bg-sky-200 rounded-xl px-4 flex-grow cursor-text">
+			<div class="bg-sky-200 rounded-xl px-4 grow cursor-text">
 				<span class="text-primary flex-1" id="url-bar"></span>
 			</div>
 			<button class="window-close text-primary cursor-pointer">
@@ -27,7 +27,7 @@ const tabs = ["About", "FAQ", "Apply", "Sagas", "Boards"];
 		</div>
 
 		<!-- Tabs -->
-		<div class="flex flex-row gap-2 px-4 mb-[-6px]">
+		<div class="flex flex-row gap-2 px-4 -mb-1.5">
 			{Array.from(tabs).map((tab, i) => (
 				<svg id={`internet-tab-${i}`} class="tab cursor-pointer  transition hover:-translate-y-0.5" 
 					width="84" height="36" viewBox="0 0 84 36" fill="#bae6fd" xmlns="http://www.w3.org/2000/svg">
